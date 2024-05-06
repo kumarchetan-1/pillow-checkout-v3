@@ -1,0 +1,2451 @@
+<!DOCTYPE html>
+<html lang="it">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="robots" content="noindex">
+    <title>Checkout Pillows</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&display=swap"
+        rel="stylesheet">
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Roboto&display=swap');
+    </style>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/magnific-popup.js/1.1.0/magnific-popup.min.css"
+        integrity="sha512-+EoPw+Fiwh6eSeRK7zwIKG2MA8i3rV/DGa3tdttQGgWyatG/SkncT53KHQaS5Jh9MNOT3dmFL0FjTY08And/Cw=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
+
+    <link rel="stylesheet" href="./style.css">
+</head>
+
+<body>
+    <header>
+        <div class="header-conta">
+            <h2> ORDINA ORA, <span>PAGHI ALLA CONSEGNA</span></h2>
+        </div>
+    </header>
+    <section id="hero-banner">
+        <div class="content-wrapper">
+            <h1>SCEGLI LA VERSIONE:</h1>
+            <form action="" id="pillowCheckoutForm" class="pillow-checkout-page" method="POST">
+                <!-- Radio Buttons -->
+                <div class="pillowType">
+                    <label class="radio-conta" for="memory_pillow">
+                        <input type="radio" name="pillowType" id="memory_pillow" value="Cuscino_Memory" checked>
+                        <span class="radio-box"></span>
+                        <span class="radio-lable">Memory</span>
+                        <img src="./Memory-pillow-placeholder.png" alt="Memory" width="55">
+                    </label>
+                    <label class="radio-conta" for="organic_memory_pillow">
+                        <input type="radio" name="pillowType" id="organic_memory_pillow" value="Cuscino_Memory_Bio">
+                        <span class="radio-box"></span>
+                        <span class="radio-lable">Memory Bio (+5€)</span>
+                        <img src="./MemoryBio-pillow-placeholder.png" alt="Memory Bio" width="55">
+                    </label>
+                </div>
+
+                <div class="two-col">
+                    <h2 class="top-title">SCEGLI LA QUANTITÀ:</h2>
+                    <div class="show-more-button hide">
+                        <button id="showMoreDropdown">
+                            <span>Mostra di più</span>
+                            <svg width="21" height="21" viewBox="0 0 21 21" fill="none"
+                                xmlns="http://www.w3.org/2000/svg">
+                                <rect x="0.5" y="0.5" width="20" height="20" rx="10" fill="#2F382F" />
+                                <g clip-path="url(#clip0_2720_470)">
+                                    <path
+                                        d="M7.0575 7.80042L10.5 11.4262L13.9425 7.80042L15 8.91666L10.5 13.6667L6 8.91666L7.0575 7.80042Z"
+                                        fill="white" />
+                                </g>
+                                <defs>
+                                    <clipPath id="clip0_2720_470">
+                                        <rect width="18" height="19" fill="white" transform="translate(1.5 1)" />
+                                    </clipPath>
+                                </defs>
+                            </svg>
+                        </button>
+                    </div>
+                </div>
+
+                <!-- radio for Cuscino Memory Quantities -->
+                <div class="cuscinoMemory_quantity quantity-containers ">
+                    <div class="quantity_checkboxes mb20">
+                        <input type="radio" name="quantityMemory" id="cmq_3x" value="99.00" data-discount="70"
+                            data-pillow="Cuscini Memory" data-quantity="3">
+                        <span class="radio-box"></span>
+                        <label for="cmq_3x">
+                            <div class="boxTopRow">
+                                <p class="box_title"> 3 Cuscini Memory</p>
+                            </div>
+                            <div class="main-wrap">
+                                <div class="main_conta">
+                                    <div class="image_col">
+                                        <img src="./3xMemory.png" alt="Three Memory Pillow" width="150">
+                                    </div>
+                                    <div class="pricing_details">
+                                        <p class="price_after_discount">29,70€ a cuscino <span class="original_price">99
+                                                €</span></p>
+                                        <p class="total_price">3 pezzi a <strong>89,00€</strong>
+                                            <span class="discount_conta">-70%</span></p>
+                                    </div>
+                                </div>
+                                <div class="bottom_wrap">
+                                    <ul>
+                                        <li><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24"
+                                                viewBox="0 0 24 24" fill="none">
+                                                <g clip-path="url(#clip0_1220_2165)">
+                                                    <path
+                                                        d="M18.0002 6.99997L16.5902 5.58997L10.2502 11.93L11.6602 13.34L18.0002 6.99997ZM22.2402 5.58997L11.6602 16.17L7.48016 12L6.07016 13.41L11.6602 19L23.6602 6.99997L22.2402 5.58997ZM0.410156 13.41L6.00016 19L7.41016 17.59L1.83016 12L0.410156 13.41Z"
+                                                        fill="#3FB02C" />
+                                                </g>
+                                                <defs>
+                                                    <clipPath id="clip0_1220_2165">
+                                                        <rect width="24" height="24" fill="white" />
+                                                    </clipPath>
+                                                </defs>
+                                            </svg>
+                                            <span>Dispositivo Medico classe 1 🇮🇹</span></li>
+                                        <li><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24"
+                                                viewBox="0 0 24 24" fill="none">
+                                                <g clip-path="url(#clip0_1220_2165)">
+                                                    <path
+                                                        d="M18.0002 6.99997L16.5902 5.58997L10.2502 11.93L11.6602 13.34L18.0002 6.99997ZM22.2402 5.58997L11.6602 16.17L7.48016 12L6.07016 13.41L11.6602 19L23.6602 6.99997L22.2402 5.58997ZM0.410156 13.41L6.00016 19L7.41016 17.59L1.83016 12L0.410156 13.41Z"
+                                                        fill="#3FB02C" />
+                                                </g>
+                                                <defs>
+                                                    <clipPath id="clip0_1220_2165">
+                                                        <rect width="24" height="24" fill="white" />
+                                                    </clipPath>
+                                                </defs>
+                                            </svg>
+                                            <span>Ripristina la curvatura cervicale</span></li>
+                                        <li><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24"
+                                                viewBox="0 0 24 24" fill="none">
+                                                <g clip-path="url(#clip0_1220_2165)">
+                                                    <path
+                                                        d="M18.0002 6.99997L16.5902 5.58997L10.2502 11.93L11.6602 13.34L18.0002 6.99997ZM22.2402 5.58997L11.6602 16.17L7.48016 12L6.07016 13.41L11.6602 19L23.6602 6.99997L22.2402 5.58997ZM0.410156 13.41L6.00016 19L7.41016 17.59L1.83016 12L0.410156 13.41Z"
+                                                        fill="#3FB02C" />
+                                                </g>
+                                                <defs>
+                                                    <clipPath id="clip0_1220_2165">
+                                                        <rect width="24" height="24" fill="white" />
+                                                    </clipPath>
+                                                </defs>
+                                            </svg>
+                                            <span>Anallergico, antibatterico e antimuffa</span></li>
+                                    </ul>
+                                    <div class="ratings_wrap">
+                                        <div class="stars">
+                                            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="21"
+                                                viewBox="0 0 20 21" fill="none">
+                                                <g clip-path="url(#clip0_1224_662)">
+                                                    <rect width="20" height="20" transform="translate(0 0.5)"
+                                                        fill="#00B67A" />
+                                                    <path
+                                                        d="M10.0003 14.8916L15.1503 18L13.7837 12.1416L18.3337 8.19996L12.342 7.69163L10.0003 2.16663L7.65866 7.69163L1.66699 8.19996L6.21699 12.1416L4.85033 18L10.0003 14.8916Z"
+                                                        fill="white" />
+                                                </g>
+                                                <defs>
+                                                    <clipPath id="clip0_1224_662">
+                                                        <rect width="20" height="20" fill="white"
+                                                            transform="translate(0 0.5)" />
+                                                    </clipPath>
+                                                </defs>
+                                            </svg>
+                                            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="21"
+                                                viewBox="0 0 20 21" fill="none">
+                                                <g clip-path="url(#clip0_1224_662)">
+                                                    <rect width="20" height="20" transform="translate(0 0.5)"
+                                                        fill="#00B67A" />
+                                                    <path
+                                                        d="M10.0003 14.8916L15.1503 18L13.7837 12.1416L18.3337 8.19996L12.342 7.69163L10.0003 2.16663L7.65866 7.69163L1.66699 8.19996L6.21699 12.1416L4.85033 18L10.0003 14.8916Z"
+                                                        fill="white" />
+                                                </g>
+                                                <defs>
+                                                    <clipPath id="clip0_1224_662">
+                                                        <rect width="20" height="20" fill="white"
+                                                            transform="translate(0 0.5)" />
+                                                    </clipPath>
+                                                </defs>
+                                            </svg>
+                                            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="21"
+                                                viewBox="0 0 20 21" fill="none">
+                                                <g clip-path="url(#clip0_1224_662)">
+                                                    <rect width="20" height="20" transform="translate(0 0.5)"
+                                                        fill="#00B67A" />
+                                                    <path
+                                                        d="M10.0003 14.8916L15.1503 18L13.7837 12.1416L18.3337 8.19996L12.342 7.69163L10.0003 2.16663L7.65866 7.69163L1.66699 8.19996L6.21699 12.1416L4.85033 18L10.0003 14.8916Z"
+                                                        fill="white" />
+                                                </g>
+                                                <defs>
+                                                    <clipPath id="clip0_1224_662">
+                                                        <rect width="20" height="20" fill="white"
+                                                            transform="translate(0 0.5)" />
+                                                    </clipPath>
+                                                </defs>
+                                            </svg>
+                                            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="21"
+                                                viewBox="0 0 20 21" fill="none">
+                                                <g clip-path="url(#clip0_1224_662)">
+                                                    <rect width="20" height="20" transform="translate(0 0.5)"
+                                                        fill="#00B67A" />
+                                                    <path
+                                                        d="M10.0003 14.8916L15.1503 18L13.7837 12.1416L18.3337 8.19996L12.342 7.69163L10.0003 2.16663L7.65866 7.69163L1.66699 8.19996L6.21699 12.1416L4.85033 18L10.0003 14.8916Z"
+                                                        fill="white" />
+                                                </g>
+                                                <defs>
+                                                    <clipPath id="clip0_1224_662">
+                                                        <rect width="20" height="20" fill="white"
+                                                            transform="translate(0 0.5)" />
+                                                    </clipPath>
+                                                </defs>
+                                            </svg>
+                                            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="21"
+                                                viewBox="0 0 20 21" fill="none">
+                                                <g clip-path="url(#clip0_1224_662)">
+                                                    <rect width="20" height="20" transform="translate(0 0.5)"
+                                                        fill="#00B67A" />
+                                                    <path
+                                                        d="M10.0003 14.8916L15.1503 18L13.7837 12.1416L18.3337 8.19996L12.342 7.69163L10.0003 2.16663L7.65866 7.69163L1.66699 8.19996L6.21699 12.1416L4.85033 18L10.0003 14.8916Z"
+                                                        fill="white" />
+                                                </g>
+                                                <defs>
+                                                    <clipPath id="clip0_1224_662">
+                                                        <rect width="20" height="20" fill="white"
+                                                            transform="translate(0 0.5)" />
+                                                    </clipPath>
+                                                </defs>
+                                            </svg>
+                                        </div>
+                                        <p>4,8 su Trustpilot</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </label>
+                    </div>
+
+                    <div class="quantity_checkboxes mb20">
+                        <input type="radio" name="quantityMemory" id="cmq_2x" value="99.00" data-discount="65"
+                            data-pillow="Cuscino Memory" data-quantity="2">
+                        <span class="radio-box"></span>
+                        <label for="cmq_2x">
+                            <div class="boxTopRow">
+                                <p class="box_title">2 Cuscini Memory</p>
+                            </div>
+                            <div class="main-wrap">
+                                <div class="main_conta">
+                                    <div class="image_col">
+                                        <img src="./2xMemory.png" alt="Single Memory Pillow" width="150">
+                                    </div>
+                                    <div class="pricing_details">
+                                        <p class="price_after_discount">34,50€ a cuscino <span class="original_price">99
+                                                €</span></p>
+                                        <p class="total_price">2 pezzi a <strong>69,00€</strong>
+                                            <span class="discount_conta">-65%</span></p>
+                                    </div>
+                                </div>
+                                <div class="bottom_wrap">
+                                    <ul>
+                                        <li><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24"
+                                                viewBox="0 0 24 24" fill="none">
+                                                <g clip-path="url(#clip0_1220_2165)">
+                                                    <path
+                                                        d="M18.0002 6.99997L16.5902 5.58997L10.2502 11.93L11.6602 13.34L18.0002 6.99997ZM22.2402 5.58997L11.6602 16.17L7.48016 12L6.07016 13.41L11.6602 19L23.6602 6.99997L22.2402 5.58997ZM0.410156 13.41L6.00016 19L7.41016 17.59L1.83016 12L0.410156 13.41Z"
+                                                        fill="#3FB02C" />
+                                                </g>
+                                                <defs>
+                                                    <clipPath id="clip0_1220_2165">
+                                                        <rect width="24" height="24" fill="white" />
+                                                    </clipPath>
+                                                </defs>
+                                            </svg>
+                                            <span>Dispositivo Medico classe 1 🇮🇹</span></li>
+                                        <li><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24"
+                                                viewBox="0 0 24 24" fill="none">
+                                                <g clip-path="url(#clip0_1220_2165)">
+                                                    <path
+                                                        d="M18.0002 6.99997L16.5902 5.58997L10.2502 11.93L11.6602 13.34L18.0002 6.99997ZM22.2402 5.58997L11.6602 16.17L7.48016 12L6.07016 13.41L11.6602 19L23.6602 6.99997L22.2402 5.58997ZM0.410156 13.41L6.00016 19L7.41016 17.59L1.83016 12L0.410156 13.41Z"
+                                                        fill="#3FB02C" />
+                                                </g>
+                                                <defs>
+                                                    <clipPath id="clip0_1220_2165">
+                                                        <rect width="24" height="24" fill="white" />
+                                                    </clipPath>
+                                                </defs>
+                                            </svg>
+                                            <span>Ripristina la curvatura cervicale</span></li>
+                                        <li><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24"
+                                                viewBox="0 0 24 24" fill="none">
+                                                <g clip-path="url(#clip0_1220_2165)">
+                                                    <path
+                                                        d="M18.0002 6.99997L16.5902 5.58997L10.2502 11.93L11.6602 13.34L18.0002 6.99997ZM22.2402 5.58997L11.6602 16.17L7.48016 12L6.07016 13.41L11.6602 19L23.6602 6.99997L22.2402 5.58997ZM0.410156 13.41L6.00016 19L7.41016 17.59L1.83016 12L0.410156 13.41Z"
+                                                        fill="#3FB02C" />
+                                                </g>
+                                                <defs>
+                                                    <clipPath id="clip0_1220_2165">
+                                                        <rect width="24" height="24" fill="white" />
+                                                    </clipPath>
+                                                </defs>
+                                            </svg>
+                                            <span>Anallergico, antibatterico e antimuffa</span></li>
+                                    </ul>
+                                    <div class="ratings_wrap">
+                                        <div class="stars">
+                                            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="21"
+                                                viewBox="0 0 20 21" fill="none">
+                                                <g clip-path="url(#clip0_1224_662)">
+                                                    <rect width="20" height="20" transform="translate(0 0.5)"
+                                                        fill="#00B67A" />
+                                                    <path
+                                                        d="M10.0003 14.8916L15.1503 18L13.7837 12.1416L18.3337 8.19996L12.342 7.69163L10.0003 2.16663L7.65866 7.69163L1.66699 8.19996L6.21699 12.1416L4.85033 18L10.0003 14.8916Z"
+                                                        fill="white" />
+                                                </g>
+                                                <defs>
+                                                    <clipPath id="clip0_1224_662">
+                                                        <rect width="20" height="20" fill="white"
+                                                            transform="translate(0 0.5)" />
+                                                    </clipPath>
+                                                </defs>
+                                            </svg>
+                                            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="21"
+                                                viewBox="0 0 20 21" fill="none">
+                                                <g clip-path="url(#clip0_1224_662)">
+                                                    <rect width="20" height="20" transform="translate(0 0.5)"
+                                                        fill="#00B67A" />
+                                                    <path
+                                                        d="M10.0003 14.8916L15.1503 18L13.7837 12.1416L18.3337 8.19996L12.342 7.69163L10.0003 2.16663L7.65866 7.69163L1.66699 8.19996L6.21699 12.1416L4.85033 18L10.0003 14.8916Z"
+                                                        fill="white" />
+                                                </g>
+                                                <defs>
+                                                    <clipPath id="clip0_1224_662">
+                                                        <rect width="20" height="20" fill="white"
+                                                            transform="translate(0 0.5)" />
+                                                    </clipPath>
+                                                </defs>
+                                            </svg>
+                                            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="21"
+                                                viewBox="0 0 20 21" fill="none">
+                                                <g clip-path="url(#clip0_1224_662)">
+                                                    <rect width="20" height="20" transform="translate(0 0.5)"
+                                                        fill="#00B67A" />
+                                                    <path
+                                                        d="M10.0003 14.8916L15.1503 18L13.7837 12.1416L18.3337 8.19996L12.342 7.69163L10.0003 2.16663L7.65866 7.69163L1.66699 8.19996L6.21699 12.1416L4.85033 18L10.0003 14.8916Z"
+                                                        fill="white" />
+                                                </g>
+                                                <defs>
+                                                    <clipPath id="clip0_1224_662">
+                                                        <rect width="20" height="20" fill="white"
+                                                            transform="translate(0 0.5)" />
+                                                    </clipPath>
+                                                </defs>
+                                            </svg>
+                                            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="21"
+                                                viewBox="0 0 20 21" fill="none">
+                                                <g clip-path="url(#clip0_1224_662)">
+                                                    <rect width="20" height="20" transform="translate(0 0.5)"
+                                                        fill="#00B67A" />
+                                                    <path
+                                                        d="M10.0003 14.8916L15.1503 18L13.7837 12.1416L18.3337 8.19996L12.342 7.69163L10.0003 2.16663L7.65866 7.69163L1.66699 8.19996L6.21699 12.1416L4.85033 18L10.0003 14.8916Z"
+                                                        fill="white" />
+                                                </g>
+                                                <defs>
+                                                    <clipPath id="clip0_1224_662">
+                                                        <rect width="20" height="20" fill="white"
+                                                            transform="translate(0 0.5)" />
+                                                    </clipPath>
+                                                </defs>
+                                            </svg>
+                                            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="21"
+                                                viewBox="0 0 20 21" fill="none">
+                                                <g clip-path="url(#clip0_1224_662)">
+                                                    <rect width="20" height="20" transform="translate(0 0.5)"
+                                                        fill="#00B67A" />
+                                                    <path
+                                                        d="M10.0003 14.8916L15.1503 18L13.7837 12.1416L18.3337 8.19996L12.342 7.69163L10.0003 2.16663L7.65866 7.69163L1.66699 8.19996L6.21699 12.1416L4.85033 18L10.0003 14.8916Z"
+                                                        fill="white" />
+                                                </g>
+                                                <defs>
+                                                    <clipPath id="clip0_1224_662">
+                                                        <rect width="20" height="20" fill="white"
+                                                            transform="translate(0 0.5)" />
+                                                    </clipPath>
+                                                </defs>
+                                            </svg>
+                                        </div>
+                                        <p>4,8 su Trustpilot</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </label>
+                    </div>
+
+                    <div class="quantity_checkboxes mb20">
+                        <input type="radio" name="quantityMemory" id="cmq_1x" value="99.00" data-discount="50"
+                            data-pillow="Cuscino Memory" data-quantity="1" >
+                        <span class="radio-box"></span>
+                        <label for="cmq_1x">
+                            <div class="boxTopRow">
+                                <p class="box_title">1 Cuscini Memory</p>
+                            </div>
+                            <div class="main-wrap">
+                                <div class="main_conta">
+                                    <div class="image_col">
+                                        <img src="./1xMemory.png" alt="Single Memory Pillow" width="150">
+                                    </div>
+                                    <div class="pricing_details">
+                                        <p class="price_after_discount">49,00€ a cuscino <span class="original_price">99
+                                                €</span></p>
+                                        <p class="total_price">1 pezzi a <strong>49,00€</strong>
+                                            <span class="discount_conta">-50%</span></p>
+                                    </div>
+                                </div>
+                                <div class="bottom_wrap">
+                                    <ul>
+                                        <li><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24"
+                                                viewBox="0 0 24 24" fill="none">
+                                                <g clip-path="url(#clip0_1220_2165)">
+                                                    <path
+                                                        d="M18.0002 6.99997L16.5902 5.58997L10.2502 11.93L11.6602 13.34L18.0002 6.99997ZM22.2402 5.58997L11.6602 16.17L7.48016 12L6.07016 13.41L11.6602 19L23.6602 6.99997L22.2402 5.58997ZM0.410156 13.41L6.00016 19L7.41016 17.59L1.83016 12L0.410156 13.41Z"
+                                                        fill="#3FB02C" />
+                                                </g>
+                                                <defs>
+                                                    <clipPath id="clip0_1220_2165">
+                                                        <rect width="24" height="24" fill="white" />
+                                                    </clipPath>
+                                                </defs>
+                                            </svg>
+                                            <span>Dispositivo Medico classe 1 🇮🇹</span></li>
+                                        <li><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24"
+                                                viewBox="0 0 24 24" fill="none">
+                                                <g clip-path="url(#clip0_1220_2165)">
+                                                    <path
+                                                        d="M18.0002 6.99997L16.5902 5.58997L10.2502 11.93L11.6602 13.34L18.0002 6.99997ZM22.2402 5.58997L11.6602 16.17L7.48016 12L6.07016 13.41L11.6602 19L23.6602 6.99997L22.2402 5.58997ZM0.410156 13.41L6.00016 19L7.41016 17.59L1.83016 12L0.410156 13.41Z"
+                                                        fill="#3FB02C" />
+                                                </g>
+                                                <defs>
+                                                    <clipPath id="clip0_1220_2165">
+                                                        <rect width="24" height="24" fill="white" />
+                                                    </clipPath>
+                                                </defs>
+                                            </svg>
+                                            <span>Ripristina la curvatura cervicale</span></li>
+                                        <li><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24"
+                                                viewBox="0 0 24 24" fill="none">
+                                                <g clip-path="url(#clip0_1220_2165)">
+                                                    <path
+                                                        d="M18.0002 6.99997L16.5902 5.58997L10.2502 11.93L11.6602 13.34L18.0002 6.99997ZM22.2402 5.58997L11.6602 16.17L7.48016 12L6.07016 13.41L11.6602 19L23.6602 6.99997L22.2402 5.58997ZM0.410156 13.41L6.00016 19L7.41016 17.59L1.83016 12L0.410156 13.41Z"
+                                                        fill="#3FB02C" />
+                                                </g>
+                                                <defs>
+                                                    <clipPath id="clip0_1220_2165">
+                                                        <rect width="24" height="24" fill="white" />
+                                                    </clipPath>
+                                                </defs>
+                                            </svg>
+                                            <span>Anallergico, antibatterico e antimuffa</span></li>
+                                    </ul>
+                                    <div class="ratings_wrap">
+                                        <div class="stars">
+                                            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="21"
+                                                viewBox="0 0 20 21" fill="none">
+                                                <g clip-path="url(#clip0_1224_662)">
+                                                    <rect width="20" height="20" transform="translate(0 0.5)"
+                                                        fill="#00B67A" />
+                                                    <path
+                                                        d="M10.0003 14.8916L15.1503 18L13.7837 12.1416L18.3337 8.19996L12.342 7.69163L10.0003 2.16663L7.65866 7.69163L1.66699 8.19996L6.21699 12.1416L4.85033 18L10.0003 14.8916Z"
+                                                        fill="white" />
+                                                </g>
+                                                <defs>
+                                                    <clipPath id="clip0_1224_662">
+                                                        <rect width="20" height="20" fill="white"
+                                                            transform="translate(0 0.5)" />
+                                                    </clipPath>
+                                                </defs>
+                                            </svg>
+                                            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="21"
+                                                viewBox="0 0 20 21" fill="none">
+                                                <g clip-path="url(#clip0_1224_662)">
+                                                    <rect width="20" height="20" transform="translate(0 0.5)"
+                                                        fill="#00B67A" />
+                                                    <path
+                                                        d="M10.0003 14.8916L15.1503 18L13.7837 12.1416L18.3337 8.19996L12.342 7.69163L10.0003 2.16663L7.65866 7.69163L1.66699 8.19996L6.21699 12.1416L4.85033 18L10.0003 14.8916Z"
+                                                        fill="white" />
+                                                </g>
+                                                <defs>
+                                                    <clipPath id="clip0_1224_662">
+                                                        <rect width="20" height="20" fill="white"
+                                                            transform="translate(0 0.5)" />
+                                                    </clipPath>
+                                                </defs>
+                                            </svg>
+                                            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="21"
+                                                viewBox="0 0 20 21" fill="none">
+                                                <g clip-path="url(#clip0_1224_662)">
+                                                    <rect width="20" height="20" transform="translate(0 0.5)"
+                                                        fill="#00B67A" />
+                                                    <path
+                                                        d="M10.0003 14.8916L15.1503 18L13.7837 12.1416L18.3337 8.19996L12.342 7.69163L10.0003 2.16663L7.65866 7.69163L1.66699 8.19996L6.21699 12.1416L4.85033 18L10.0003 14.8916Z"
+                                                        fill="white" />
+                                                </g>
+                                                <defs>
+                                                    <clipPath id="clip0_1224_662">
+                                                        <rect width="20" height="20" fill="white"
+                                                            transform="translate(0 0.5)" />
+                                                    </clipPath>
+                                                </defs>
+                                            </svg>
+                                            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="21"
+                                                viewBox="0 0 20 21" fill="none">
+                                                <g clip-path="url(#clip0_1224_662)">
+                                                    <rect width="20" height="20" transform="translate(0 0.5)"
+                                                        fill="#00B67A" />
+                                                    <path
+                                                        d="M10.0003 14.8916L15.1503 18L13.7837 12.1416L18.3337 8.19996L12.342 7.69163L10.0003 2.16663L7.65866 7.69163L1.66699 8.19996L6.21699 12.1416L4.85033 18L10.0003 14.8916Z"
+                                                        fill="white" />
+                                                </g>
+                                                <defs>
+                                                    <clipPath id="clip0_1224_662">
+                                                        <rect width="20" height="20" fill="white"
+                                                            transform="translate(0 0.5)" />
+                                                    </clipPath>
+                                                </defs>
+                                            </svg>
+                                            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="21"
+                                                viewBox="0 0 20 21" fill="none">
+                                                <g clip-path="url(#clip0_1224_662)">
+                                                    <rect width="20" height="20" transform="translate(0 0.5)"
+                                                        fill="#00B67A" />
+                                                    <path
+                                                        d="M10.0003 14.8916L15.1503 18L13.7837 12.1416L18.3337 8.19996L12.342 7.69163L10.0003 2.16663L7.65866 7.69163L1.66699 8.19996L6.21699 12.1416L4.85033 18L10.0003 14.8916Z"
+                                                        fill="white" />
+                                                </g>
+                                                <defs>
+                                                    <clipPath id="clip0_1224_662">
+                                                        <rect width="20" height="20" fill="white"
+                                                            transform="translate(0 0.5)" />
+                                                    </clipPath>
+                                                </defs>
+                                            </svg>
+                                        </div>
+                                        <p>4,8 su Trustpilot</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </label>
+                    </div>
+                </div>
+
+                <!-- radio for Cuscino Memory Bio Quantities -->
+                <div class="cuscinoMemoryBio_quantity quantity-containers hide">
+                    <div class="quantity_checkboxes mb20">
+                        <input type="radio" name="quantityMemoryBio" id="cmbq_3x" value="109.00" data-discount="70"
+                            data-pillow="Cuscini Memory Bio" data-quantity="3">
+                        <span class="radio-box"></span>
+                        <label for="cmbq_3x">
+                            <div class="boxTopRow">
+                                <p class="box_title">3 Cuscini Memory Bio</p>
+                            </div>
+                            <div class="main-wrap">
+                                <div class="main_conta">
+                                    <div class="image_col">
+                                        <img src="./3xMemoryBio.png" alt="Three Pillows" width="150">
+                                    </div>
+                                    <div class="pricing_details">
+                                        <p class="price_after_discount">32,70€ a cuscino <span
+                                                class="original_price">109
+                                                €</span></p>
+                                        <p class="total_price">3 pezzi a <strong>98,00€</strong>
+                                            <span class="discount_conta">-70%</span></p>
+                                    </div>
+                                </div>
+                                <div class="bottom_wrap">
+                                    <ul>
+                                        <li><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24"
+                                                viewBox="0 0 24 24" fill="none">
+                                                <g clip-path="url(#clip0_1220_2165)">
+                                                    <path
+                                                        d="M18.0002 6.99997L16.5902 5.58997L10.2502 11.93L11.6602 13.34L18.0002 6.99997ZM22.2402 5.58997L11.6602 16.17L7.48016 12L6.07016 13.41L11.6602 19L23.6602 6.99997L22.2402 5.58997ZM0.410156 13.41L6.00016 19L7.41016 17.59L1.83016 12L0.410156 13.41Z"
+                                                        fill="#3FB02C" />
+                                                </g>
+                                                <defs>
+                                                    <clipPath id="clip0_1220_2165">
+                                                        <rect width="24" height="24" fill="white" />
+                                                    </clipPath>
+                                                </defs>
+                                            </svg>
+                                            <span>Dispositivo Medico classe 1 🇮🇹</span></li>
+                                        <li><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24"
+                                                viewBox="0 0 24 24" fill="none">
+                                                <g clip-path="url(#clip0_1220_2165)">
+                                                    <path
+                                                        d="M18.0002 6.99997L16.5902 5.58997L10.2502 11.93L11.6602 13.34L18.0002 6.99997ZM22.2402 5.58997L11.6602 16.17L7.48016 12L6.07016 13.41L11.6602 19L23.6602 6.99997L22.2402 5.58997ZM0.410156 13.41L6.00016 19L7.41016 17.59L1.83016 12L0.410156 13.41Z"
+                                                        fill="#3FB02C" />
+                                                </g>
+                                                <defs>
+                                                    <clipPath id="clip0_1220_2165">
+                                                        <rect width="24" height="24" fill="white" />
+                                                    </clipPath>
+                                                </defs>
+                                            </svg>
+                                            <span>Ripristina la curvatura cervicale</span></li>
+                                        <li><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24"
+                                                viewBox="0 0 24 24" fill="none">
+                                                <g clip-path="url(#clip0_1220_2165)">
+                                                    <path
+                                                        d="M18.0002 6.99997L16.5902 5.58997L10.2502 11.93L11.6602 13.34L18.0002 6.99997ZM22.2402 5.58997L11.6602 16.17L7.48016 12L6.07016 13.41L11.6602 19L23.6602 6.99997L22.2402 5.58997ZM0.410156 13.41L6.00016 19L7.41016 17.59L1.83016 12L0.410156 13.41Z"
+                                                        fill="#3FB02C" />
+                                                </g>
+                                                <defs>
+                                                    <clipPath id="clip0_1220_2165">
+                                                        <rect width="24" height="24" fill="white" />
+                                                    </clipPath>
+                                                </defs>
+                                            </svg>
+                                            <span>Anallergico, antibatterico e antimuffa</span></li>
+                                    </ul>
+                                    <div class="ratings_wrap">
+                                        <div class="stars">
+                                            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="21"
+                                                viewBox="0 0 20 21" fill="none">
+                                                <g clip-path="url(#clip0_1224_662)">
+                                                    <rect width="20" height="20" transform="translate(0 0.5)"
+                                                        fill="#00B67A" />
+                                                    <path
+                                                        d="M10.0003 14.8916L15.1503 18L13.7837 12.1416L18.3337 8.19996L12.342 7.69163L10.0003 2.16663L7.65866 7.69163L1.66699 8.19996L6.21699 12.1416L4.85033 18L10.0003 14.8916Z"
+                                                        fill="white" />
+                                                </g>
+                                                <defs>
+                                                    <clipPath id="clip0_1224_662">
+                                                        <rect width="20" height="20" fill="white"
+                                                            transform="translate(0 0.5)" />
+                                                    </clipPath>
+                                                </defs>
+                                            </svg>
+                                            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="21"
+                                                viewBox="0 0 20 21" fill="none">
+                                                <g clip-path="url(#clip0_1224_662)">
+                                                    <rect width="20" height="20" transform="translate(0 0.5)"
+                                                        fill="#00B67A" />
+                                                    <path
+                                                        d="M10.0003 14.8916L15.1503 18L13.7837 12.1416L18.3337 8.19996L12.342 7.69163L10.0003 2.16663L7.65866 7.69163L1.66699 8.19996L6.21699 12.1416L4.85033 18L10.0003 14.8916Z"
+                                                        fill="white" />
+                                                </g>
+                                                <defs>
+                                                    <clipPath id="clip0_1224_662">
+                                                        <rect width="20" height="20" fill="white"
+                                                            transform="translate(0 0.5)" />
+                                                    </clipPath>
+                                                </defs>
+                                            </svg>
+                                            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="21"
+                                                viewBox="0 0 20 21" fill="none">
+                                                <g clip-path="url(#clip0_1224_662)">
+                                                    <rect width="20" height="20" transform="translate(0 0.5)"
+                                                        fill="#00B67A" />
+                                                    <path
+                                                        d="M10.0003 14.8916L15.1503 18L13.7837 12.1416L18.3337 8.19996L12.342 7.69163L10.0003 2.16663L7.65866 7.69163L1.66699 8.19996L6.21699 12.1416L4.85033 18L10.0003 14.8916Z"
+                                                        fill="white" />
+                                                </g>
+                                                <defs>
+                                                    <clipPath id="clip0_1224_662">
+                                                        <rect width="20" height="20" fill="white"
+                                                            transform="translate(0 0.5)" />
+                                                    </clipPath>
+                                                </defs>
+                                            </svg>
+                                            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="21"
+                                                viewBox="0 0 20 21" fill="none">
+                                                <g clip-path="url(#clip0_1224_662)">
+                                                    <rect width="20" height="20" transform="translate(0 0.5)"
+                                                        fill="#00B67A" />
+                                                    <path
+                                                        d="M10.0003 14.8916L15.1503 18L13.7837 12.1416L18.3337 8.19996L12.342 7.69163L10.0003 2.16663L7.65866 7.69163L1.66699 8.19996L6.21699 12.1416L4.85033 18L10.0003 14.8916Z"
+                                                        fill="white" />
+                                                </g>
+                                                <defs>
+                                                    <clipPath id="clip0_1224_662">
+                                                        <rect width="20" height="20" fill="white"
+                                                            transform="translate(0 0.5)" />
+                                                    </clipPath>
+                                                </defs>
+                                            </svg>
+                                            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="21"
+                                                viewBox="0 0 20 21" fill="none">
+                                                <g clip-path="url(#clip0_1224_662)">
+                                                    <rect width="20" height="20" transform="translate(0 0.5)"
+                                                        fill="#00B67A" />
+                                                    <path
+                                                        d="M10.0003 14.8916L15.1503 18L13.7837 12.1416L18.3337 8.19996L12.342 7.69163L10.0003 2.16663L7.65866 7.69163L1.66699 8.19996L6.21699 12.1416L4.85033 18L10.0003 14.8916Z"
+                                                        fill="white" />
+                                                </g>
+                                                <defs>
+                                                    <clipPath id="clip0_1224_662">
+                                                        <rect width="20" height="20" fill="white"
+                                                            transform="translate(0 0.5)" />
+                                                    </clipPath>
+                                                </defs>
+                                            </svg>
+                                        </div>
+                                        <p>4,8 su Trustpilot</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </label>
+                    </div>
+                    <div class="quantity_checkboxes mb20">
+                        <input type="radio" name="quantityMemoryBio" id="cmbq_2x" value="109.00" data-discount="65"
+                            data-pillow="Cuscini Memory Bio" data-quantity="2">
+                        <span class="radio-box"></span>
+                        <label for="cmbq_2x">
+                            <div class="boxTopRow">
+                                <p class="box_title">2 Cuscini Memory Bio</p>
+                            </div>
+                            <div class="main-wrap">
+                                <div class="main_conta">
+                                    <div class="image_col">
+                                        <img src="./2xMemoryBio.png" alt="Two Pillows" width="150">
+                                    </div>
+                                    <div class="pricing_details">
+                                        <p class="price_after_discount">38,00€ a cuscino <span
+                                                class="original_price">109
+                                                €</span></p>
+                                        <p class="total_price">2 pezzi a <strong>76,00€</strong>
+                                            <span class="discount_conta">-65%</span></p>
+                                    </div>
+                                </div>
+                                <div class="bottom_wrap">
+                                    <ul>
+                                        <li><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24"
+                                                viewBox="0 0 24 24" fill="none">
+                                                <g clip-path="url(#clip0_1220_2165)">
+                                                    <path
+                                                        d="M18.0002 6.99997L16.5902 5.58997L10.2502 11.93L11.6602 13.34L18.0002 6.99997ZM22.2402 5.58997L11.6602 16.17L7.48016 12L6.07016 13.41L11.6602 19L23.6602 6.99997L22.2402 5.58997ZM0.410156 13.41L6.00016 19L7.41016 17.59L1.83016 12L0.410156 13.41Z"
+                                                        fill="#3FB02C" />
+                                                </g>
+                                                <defs>
+                                                    <clipPath id="clip0_1220_2165">
+                                                        <rect width="24" height="24" fill="white" />
+                                                    </clipPath>
+                                                </defs>
+                                            </svg>
+                                            <span>Dispositivo Medico classe 1 🇮🇹</span></li>
+                                        <li><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24"
+                                                viewBox="0 0 24 24" fill="none">
+                                                <g clip-path="url(#clip0_1220_2165)">
+                                                    <path
+                                                        d="M18.0002 6.99997L16.5902 5.58997L10.2502 11.93L11.6602 13.34L18.0002 6.99997ZM22.2402 5.58997L11.6602 16.17L7.48016 12L6.07016 13.41L11.6602 19L23.6602 6.99997L22.2402 5.58997ZM0.410156 13.41L6.00016 19L7.41016 17.59L1.83016 12L0.410156 13.41Z"
+                                                        fill="#3FB02C" />
+                                                </g>
+                                                <defs>
+                                                    <clipPath id="clip0_1220_2165">
+                                                        <rect width="24" height="24" fill="white" />
+                                                    </clipPath>
+                                                </defs>
+                                            </svg>
+                                            <span>Ripristina la curvatura cervicale</span></li>
+                                        <li><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24"
+                                                viewBox="0 0 24 24" fill="none">
+                                                <g clip-path="url(#clip0_1220_2165)">
+                                                    <path
+                                                        d="M18.0002 6.99997L16.5902 5.58997L10.2502 11.93L11.6602 13.34L18.0002 6.99997ZM22.2402 5.58997L11.6602 16.17L7.48016 12L6.07016 13.41L11.6602 19L23.6602 6.99997L22.2402 5.58997ZM0.410156 13.41L6.00016 19L7.41016 17.59L1.83016 12L0.410156 13.41Z"
+                                                        fill="#3FB02C" />
+                                                </g>
+                                                <defs>
+                                                    <clipPath id="clip0_1220_2165">
+                                                        <rect width="24" height="24" fill="white" />
+                                                    </clipPath>
+                                                </defs>
+                                            </svg>
+                                            <span>Anallergico, antibatterico e antimuffa</span></li>
+                                    </ul>
+                                    <div class="ratings_wrap">
+                                        <div class="stars">
+                                            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="21"
+                                                viewBox="0 0 20 21" fill="none">
+                                                <g clip-path="url(#clip0_1224_662)">
+                                                    <rect width="20" height="20" transform="translate(0 0.5)"
+                                                        fill="#00B67A" />
+                                                    <path
+                                                        d="M10.0003 14.8916L15.1503 18L13.7837 12.1416L18.3337 8.19996L12.342 7.69163L10.0003 2.16663L7.65866 7.69163L1.66699 8.19996L6.21699 12.1416L4.85033 18L10.0003 14.8916Z"
+                                                        fill="white" />
+                                                </g>
+                                                <defs>
+                                                    <clipPath id="clip0_1224_662">
+                                                        <rect width="20" height="20" fill="white"
+                                                            transform="translate(0 0.5)" />
+                                                    </clipPath>
+                                                </defs>
+                                            </svg>
+                                            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="21"
+                                                viewBox="0 0 20 21" fill="none">
+                                                <g clip-path="url(#clip0_1224_662)">
+                                                    <rect width="20" height="20" transform="translate(0 0.5)"
+                                                        fill="#00B67A" />
+                                                    <path
+                                                        d="M10.0003 14.8916L15.1503 18L13.7837 12.1416L18.3337 8.19996L12.342 7.69163L10.0003 2.16663L7.65866 7.69163L1.66699 8.19996L6.21699 12.1416L4.85033 18L10.0003 14.8916Z"
+                                                        fill="white" />
+                                                </g>
+                                                <defs>
+                                                    <clipPath id="clip0_1224_662">
+                                                        <rect width="20" height="20" fill="white"
+                                                            transform="translate(0 0.5)" />
+                                                    </clipPath>
+                                                </defs>
+                                            </svg>
+                                            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="21"
+                                                viewBox="0 0 20 21" fill="none">
+                                                <g clip-path="url(#clip0_1224_662)">
+                                                    <rect width="20" height="20" transform="translate(0 0.5)"
+                                                        fill="#00B67A" />
+                                                    <path
+                                                        d="M10.0003 14.8916L15.1503 18L13.7837 12.1416L18.3337 8.19996L12.342 7.69163L10.0003 2.16663L7.65866 7.69163L1.66699 8.19996L6.21699 12.1416L4.85033 18L10.0003 14.8916Z"
+                                                        fill="white" />
+                                                </g>
+                                                <defs>
+                                                    <clipPath id="clip0_1224_662">
+                                                        <rect width="20" height="20" fill="white"
+                                                            transform="translate(0 0.5)" />
+                                                    </clipPath>
+                                                </defs>
+                                            </svg>
+                                            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="21"
+                                                viewBox="0 0 20 21" fill="none">
+                                                <g clip-path="url(#clip0_1224_662)">
+                                                    <rect width="20" height="20" transform="translate(0 0.5)"
+                                                        fill="#00B67A" />
+                                                    <path
+                                                        d="M10.0003 14.8916L15.1503 18L13.7837 12.1416L18.3337 8.19996L12.342 7.69163L10.0003 2.16663L7.65866 7.69163L1.66699 8.19996L6.21699 12.1416L4.85033 18L10.0003 14.8916Z"
+                                                        fill="white" />
+                                                </g>
+                                                <defs>
+                                                    <clipPath id="clip0_1224_662">
+                                                        <rect width="20" height="20" fill="white"
+                                                            transform="translate(0 0.5)" />
+                                                    </clipPath>
+                                                </defs>
+                                            </svg>
+                                            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="21"
+                                                viewBox="0 0 20 21" fill="none">
+                                                <g clip-path="url(#clip0_1224_662)">
+                                                    <rect width="20" height="20" transform="translate(0 0.5)"
+                                                        fill="#00B67A" />
+                                                    <path
+                                                        d="M10.0003 14.8916L15.1503 18L13.7837 12.1416L18.3337 8.19996L12.342 7.69163L10.0003 2.16663L7.65866 7.69163L1.66699 8.19996L6.21699 12.1416L4.85033 18L10.0003 14.8916Z"
+                                                        fill="white" />
+                                                </g>
+                                                <defs>
+                                                    <clipPath id="clip0_1224_662">
+                                                        <rect width="20" height="20" fill="white"
+                                                            transform="translate(0 0.5)" />
+                                                    </clipPath>
+                                                </defs>
+                                            </svg>
+                                        </div>
+                                        <p>4,8 su Trustpilot</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </label>
+                    </div>
+                    <div class="quantity_checkboxes mb20">
+                        <input type="radio" name="quantityMemoryBio" id="cmbq_1x" value="109.00" data-discount="50"
+                            data-pillow="Cuscini Memory Bio" data-quantity="1" >
+                        <span class="radio-box"></span>
+                        <label for="cmbq_1x">
+                            <div class="boxTopRow">
+                                <p class="box_title">1 Cuscini Memory Bio</p>
+                            </div>
+                            <div class="main-wrap">
+                                <div class="main_conta">
+                                    <div class="image_col">
+                                        <img src="./1xMemoryBio.png" alt="One Pillow" width="150">
+                                    </div>
+                                    <div class="pricing_details">
+                                        <p class="price_after_discount">54,00€ a cuscino <span
+                                                class="original_price">109
+                                                €</span></p>
+                                        <p class="total_price">1 pezzi a <strong>54,00€</strong>
+                                            <span class="discount_conta">-50%</span></p>
+                                    </div>
+                                </div>
+                                <div class="bottom_wrap">
+                                    <ul>
+                                        <li><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24"
+                                                viewBox="0 0 24 24" fill="none">
+                                                <g clip-path="url(#clip0_1220_2165)">
+                                                    <path
+                                                        d="M18.0002 6.99997L16.5902 5.58997L10.2502 11.93L11.6602 13.34L18.0002 6.99997ZM22.2402 5.58997L11.6602 16.17L7.48016 12L6.07016 13.41L11.6602 19L23.6602 6.99997L22.2402 5.58997ZM0.410156 13.41L6.00016 19L7.41016 17.59L1.83016 12L0.410156 13.41Z"
+                                                        fill="#3FB02C" />
+                                                </g>
+                                                <defs>
+                                                    <clipPath id="clip0_1220_2165">
+                                                        <rect width="24" height="24" fill="white" />
+                                                    </clipPath>
+                                                </defs>
+                                            </svg>
+                                            <span>Dispositivo Medico classe 1 🇮🇹</span></li>
+                                        <li><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24"
+                                                viewBox="0 0 24 24" fill="none">
+                                                <g clip-path="url(#clip0_1220_2165)">
+                                                    <path
+                                                        d="M18.0002 6.99997L16.5902 5.58997L10.2502 11.93L11.6602 13.34L18.0002 6.99997ZM22.2402 5.58997L11.6602 16.17L7.48016 12L6.07016 13.41L11.6602 19L23.6602 6.99997L22.2402 5.58997ZM0.410156 13.41L6.00016 19L7.41016 17.59L1.83016 12L0.410156 13.41Z"
+                                                        fill="#3FB02C" />
+                                                </g>
+                                                <defs>
+                                                    <clipPath id="clip0_1220_2165">
+                                                        <rect width="24" height="24" fill="white" />
+                                                    </clipPath>
+                                                </defs>
+                                            </svg>
+                                            <span>Ripristina la curvatura cervicale</span></li>
+                                        <li><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24"
+                                                viewBox="0 0 24 24" fill="none">
+                                                <g clip-path="url(#clip0_1220_2165)">
+                                                    <path
+                                                        d="M18.0002 6.99997L16.5902 5.58997L10.2502 11.93L11.6602 13.34L18.0002 6.99997ZM22.2402 5.58997L11.6602 16.17L7.48016 12L6.07016 13.41L11.6602 19L23.6602 6.99997L22.2402 5.58997ZM0.410156 13.41L6.00016 19L7.41016 17.59L1.83016 12L0.410156 13.41Z"
+                                                        fill="#3FB02C" />
+                                                </g>
+                                                <defs>
+                                                    <clipPath id="clip0_1220_2165">
+                                                        <rect width="24" height="24" fill="white" />
+                                                    </clipPath>
+                                                </defs>
+                                            </svg>
+                                            <span>Anallergico, antibatterico e antimuffa</span></li>
+                                    </ul>
+                                    <div class="ratings_wrap">
+                                        <div class="stars">
+                                            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="21"
+                                                viewBox="0 0 20 21" fill="none">
+                                                <g clip-path="url(#clip0_1224_662)">
+                                                    <rect width="20" height="20" transform="translate(0 0.5)"
+                                                        fill="#00B67A" />
+                                                    <path
+                                                        d="M10.0003 14.8916L15.1503 18L13.7837 12.1416L18.3337 8.19996L12.342 7.69163L10.0003 2.16663L7.65866 7.69163L1.66699 8.19996L6.21699 12.1416L4.85033 18L10.0003 14.8916Z"
+                                                        fill="white" />
+                                                </g>
+                                                <defs>
+                                                    <clipPath id="clip0_1224_662">
+                                                        <rect width="20" height="20" fill="white"
+                                                            transform="translate(0 0.5)" />
+                                                    </clipPath>
+                                                </defs>
+                                            </svg>
+                                            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="21"
+                                                viewBox="0 0 20 21" fill="none">
+                                                <g clip-path="url(#clip0_1224_662)">
+                                                    <rect width="20" height="20" transform="translate(0 0.5)"
+                                                        fill="#00B67A" />
+                                                    <path
+                                                        d="M10.0003 14.8916L15.1503 18L13.7837 12.1416L18.3337 8.19996L12.342 7.69163L10.0003 2.16663L7.65866 7.69163L1.66699 8.19996L6.21699 12.1416L4.85033 18L10.0003 14.8916Z"
+                                                        fill="white" />
+                                                </g>
+                                                <defs>
+                                                    <clipPath id="clip0_1224_662">
+                                                        <rect width="20" height="20" fill="white"
+                                                            transform="translate(0 0.5)" />
+                                                    </clipPath>
+                                                </defs>
+                                            </svg>
+                                            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="21"
+                                                viewBox="0 0 20 21" fill="none">
+                                                <g clip-path="url(#clip0_1224_662)">
+                                                    <rect width="20" height="20" transform="translate(0 0.5)"
+                                                        fill="#00B67A" />
+                                                    <path
+                                                        d="M10.0003 14.8916L15.1503 18L13.7837 12.1416L18.3337 8.19996L12.342 7.69163L10.0003 2.16663L7.65866 7.69163L1.66699 8.19996L6.21699 12.1416L4.85033 18L10.0003 14.8916Z"
+                                                        fill="white" />
+                                                </g>
+                                                <defs>
+                                                    <clipPath id="clip0_1224_662">
+                                                        <rect width="20" height="20" fill="white"
+                                                            transform="translate(0 0.5)" />
+                                                    </clipPath>
+                                                </defs>
+                                            </svg>
+                                            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="21"
+                                                viewBox="0 0 20 21" fill="none">
+                                                <g clip-path="url(#clip0_1224_662)">
+                                                    <rect width="20" height="20" transform="translate(0 0.5)"
+                                                        fill="#00B67A" />
+                                                    <path
+                                                        d="M10.0003 14.8916L15.1503 18L13.7837 12.1416L18.3337 8.19996L12.342 7.69163L10.0003 2.16663L7.65866 7.69163L1.66699 8.19996L6.21699 12.1416L4.85033 18L10.0003 14.8916Z"
+                                                        fill="white" />
+                                                </g>
+                                                <defs>
+                                                    <clipPath id="clip0_1224_662">
+                                                        <rect width="20" height="20" fill="white"
+                                                            transform="translate(0 0.5)" />
+                                                    </clipPath>
+                                                </defs>
+                                            </svg>
+                                            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="21"
+                                                viewBox="0 0 20 21" fill="none">
+                                                <g clip-path="url(#clip0_1224_662)">
+                                                    <rect width="20" height="20" transform="translate(0 0.5)"
+                                                        fill="#00B67A" />
+                                                    <path
+                                                        d="M10.0003 14.8916L15.1503 18L13.7837 12.1416L18.3337 8.19996L12.342 7.69163L10.0003 2.16663L7.65866 7.69163L1.66699 8.19996L6.21699 12.1416L4.85033 18L10.0003 14.8916Z"
+                                                        fill="white" />
+                                                </g>
+                                                <defs>
+                                                    <clipPath id="clip0_1224_662">
+                                                        <rect width="20" height="20" fill="white"
+                                                            transform="translate(0 0.5)" />
+                                                    </clipPath>
+                                                </defs>
+                                            </svg>
+                                        </div>
+                                        <p>4,8 su Trustpilot</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </label>
+                    </div>
+                </div>
+
+                <div class="extra-coupon-conta hide">
+                    <div class="coupon-conta-wrap">
+                        <div class="title-conta">
+                            <h2>Coupon extra di 10€!</h2>
+                        </div>
+                        <div class="card-body">
+                            <h4>Hai attivato ora un coupon a tempo. Inoltre:</h4>
+                            <ul>
+                                <li><img src="./clock.svg" alt="clock" width="17"><span>Spedizioni in 24/48 ore
+                                        gratis!</span></li>
+                                <li><img src="./cart.svg" width="20px" alt="cart"><span>Paghi il corriere in
+                                        contanti!</span></li>
+                                <li><img src="./verification-badge.svg" width="15" alt="verification-badge"><span>14
+                                        Giorni di Garanzia di Rimborso!</span></li>
+                                <li><img src="./support-icon.svg" width="16" alt="support icon"><span>Supporto
+                                        telefonico o WhatsApp!</span> </li>
+                            </ul>
+                            <div id="timer">
+                                <div class="time-wrap">
+                                    <div id="minutes">00</div>
+                                    <div class="timer-text align-center">Minuti</div>
+                                </div>
+                                <div class="colon">:</div>
+                                <div class="time-wrap">
+                                    <div id="seconds">00</div>
+                                    <div class="timer-text align-center">Secondi</div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="card-foot">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="25" viewBox="0 0 24 25"
+                                fill="none">
+                                <path
+                                    d="M12 19.5001L6 13.5001L7.4 12.1001L12 16.6751L16.6 12.1001L18 13.5001L12 19.5001ZM12 13.5001L6 7.5001L7.4 6.1001L12 10.6751L16.6 6.1001L18 7.5001L12 13.5001Z"
+                                    fill="#2F382F" />
+                            </svg>
+                            <p>Non perdere lo sconto a scadenza!
+                                Compila ora il form qui sotto.</p>
+                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="25" viewBox="0 0 24 25"
+                                fill="none">
+                                <path
+                                    d="M12 19.5001L6 13.5001L7.4 12.1001L12 16.6751L16.6 12.1001L18 13.5001L12 19.5001ZM12 13.5001L6 7.5001L7.4 6.1001L12 10.6751L16.6 6.1001L18 7.5001L12 13.5001Z"
+                                    fill="#2F382F" />
+                            </svg>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="personalAndDeliveryDetails">
+                    <div class="personal-info form-info">
+                        <h2>
+                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
+                                fill="none">
+                                <path
+                                    d="M12 12C15.315 12 18 9.315 18 6C18 2.685 15.315 0 12 0C8.685 0 6 2.685 6 6C6 9.315 8.685 12 12 12ZM12 15C7.995 15 0 17.01 0 21V24H24V21C24 17.01 16.005 15 12 15Z"
+                                    fill="black" />
+                            </svg>
+                            <span class="title">CONTATTI</span>
+                        </h2>
+                    </div>
+                    <div class="inputContainer">
+                        <input type="text" class="text-input" id="fName" placeholder="" required>
+                        <label for="fName"> Nome e Cognome</label>
+                    </div>
+                    <div class="inputContainer">
+                        <input type="tel" class="text-input" id="telephone" placeholder=""
+                            pattern="[0-9]{3} [0-9]{3} [0-9]{4}" maxlength="12" required>
+                        <label for="telephone">Cellulare</label>
+                    </div>
+                    <div class="input-box">
+                        <div class="inputContainer">
+                            <input type="text" class="text-input" name="" id="email" placeholder="" required>
+                            <label for="email">E-mail (facoltativa)</label>
+                        </div>
+                        <span id="emailValidationText"></span>
+                    </div>
+                    <div class="form-info indirizzo">
+                        <h2>
+                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
+                                fill="none">
+                                <g clip-path="url(#clip0_286_3529)">
+                                    <path
+                                        d="M20 8H17V4H3C1.9 4 1 4.9 1 6V17H3C3 18.66 4.34 20 6 20C7.66 20 9 18.66 9 17H15C15 18.66 16.34 20 18 20C19.66 20 21 18.66 21 17H23V12L20 8ZM6 18.5C5.17 18.5 4.5 17.83 4.5 17C4.5 16.17 5.17 15.5 6 15.5C6.83 15.5 7.5 16.17 7.5 17C7.5 17.83 6.83 18.5 6 18.5ZM19.5 9.5L21.46 12H17V9.5H19.5ZM18 18.5C17.17 18.5 16.5 17.83 16.5 17C16.5 16.17 17.17 15.5 18 15.5C18.83 15.5 19.5 16.17 19.5 17C19.5 17.83 18.83 18.5 18 18.5Z"
+                                        fill="#323232" />
+                                </g>
+                                <defs>
+                                    <clipPath id="clip0_286_3529">
+                                        <rect width="24" height="24" fill="white" />
+                                    </clipPath>
+                                </defs>
+                            </svg>
+                            <span class="title">INDIRIZZO</span>
+                        </h2>
+                    </div>
+                    <div class="inputContainer">
+                        <input type="text" class="text-input" name="" id="address" placeholder="" required>
+                        <label for="address">Indirizzo (via e civico)</label>
+                    </div>
+                    <div class="half_width_conta">
+                        <div class="inputContainer">
+                            <input type="text" class="text-input" name="" id="city" placeholder="" required>
+                            <label for="city">Città</label>
+                        </div>
+                        <select name="Provincia" id="provincia" required>
+                            <option>Provincia</option>
+                            <option value="AG">Agrigento (AG)</option>
+                            <option value="AL">Alessandria (AL)</option>
+                            <option value="AN">Ancona (AN)</option>
+                            <option value="AO">Aosta (AO)</option>
+                            <option value="AR">Arezzo (AR)</option>
+                            <option value="AP">Ascoli Piceno (AP)</option>
+                            <option value="AT">Asti (AT)</option>
+                            <option value="AV">Avellino (AV)</option>
+                            <option value="BA">Bari (BA)</option>
+                            <option value="BT">Barletta-Andria-Trani (BT)</option>
+                            <option value="BL">Belluno (BL)</option>
+                            <option value="BN">Benevento (BN)</option>
+                            <option value="BG">Bergamo (BG)</option>
+                            <option value="BI">Biella (BI)</option>
+                            <option value="BO">Bologna (BO)</option>
+                            <option value="BS">Brescia (BS)</option>
+                            <option value="BR">Brindisi (BR)</option>
+                            <option value="CA">Cagliari (CA)</option>
+                            <option value="CL">Caltanissetta (CL)</option>
+                            <option value="CB">Campobasso (CB)</option>
+                            <option value="CE">Caserta (CE)</option>
+                            <option value="CT">Catania (CT)</option>
+                            <option value="CZ">Catanzaro (CZ)</option>
+                            <option value="CH">Chieti (CH)</option>
+                            <option value="CO">Como (CO)</option>
+                            <option value="CS">Cosenza (CS)</option>
+                            <option value="CR">Cremona (CR)</option>
+                            <option value="KR">Crotone (KR)</option>
+                            <option value="CN">Cuneo (CN)</option>
+                            <option value="EN">Enna (EN)</option>
+                            <option value="FM">Fermo (FM)</option>
+                            <option value="FE">Ferrara (FE)</option>
+                            <option value="FI">Florence (FI)</option>
+                            <option value="FG">Foggia (FG)</option>
+                            <option value="FC">Forlì-Cesena (FC)</option>
+                            <option value="FR">Frosinone (FR)</option>
+                            <option value="GE">Genoa (GE)</option>
+                            <option value="GO">Gorizia (GO)</option>
+                            <option value="GR">Grosseto (GR)</option>
+                            <option value="IM">Imperia (IM)</option>
+                            <option value="IS">Isernia (IS)</option>
+                            <option value="SP">La Spezia (SP)</option>
+                            <option value="AQ">L'Aquila (AQ)</option>
+                            <option value="LT">Latina (LT)</option>
+                            <option value="LE">Lecce (LE)</option>
+                            <option value="LC">Lecco (LC)</option>
+                            <option value="LI">Livorno (LI)</option>
+                            <option value="LO">Lodi (LO)</option>
+                            <option value="LU">Lucca (LU)</option>
+                            <option value="MC">Macerata (MC)</option>
+                            <option value="MN">Mantua (MN)</option>
+                            <option value="MS">Massa and Carrara (MS)</option>
+                            <option value="MT">Matera (MT)</option>
+                            <option value="ME">Messina (ME)</option>
+                            <option value="MI">Milan (MI)</option>
+                            <option value="MO">Modena (MO)</option>
+                            <option value="MB">Monza and Brianza (MB)</option>
+                            <option value="NA">Naples (NA)</option>
+                            <option value="NO">Novara (NO)</option>
+                            <option value="NU">Nuoro (NU)</option>
+                            <option value="OR">Oristano (OR)</option>
+                            <option value="PD">Padua (PD)</option>
+                            <option value="PA">Palermo (PA)</option>
+                            <option value="PR">Parma (PR)</option>
+                            <option value="PV">Pavia (PV)</option>
+                            <option value="PG">Perugia (PG)</option>
+                            <option value="PU">Pesaro and Urbino (PU)</option>
+                            <option value="PE">Pescara (PE)</option>
+                            <option value="PC">Piacenza (PC)</option>
+                            <option value="PI">Pisa (PI)</option>
+                            <option value="PT">Pistoia (PT)</option>
+                            <option value="PN">Pordenone (PN)</option>
+                            <option value="PZ">Potenza (PZ)</option>
+                            <option value="PO">Prato (PO)</option>
+                            <option value="RG">Ragusa (RG)</option>
+                            <option value="RA">Ravenna (RA)</option>
+                            <option value="RC">Reggio Calabria (RC)</option>
+                            <option value="RE">Reggio Emilia (RE)</option>
+                            <option value="RI">Rieti (RI)</option>
+                            <option value="RN">Rimini (RN)</option>
+                            <option value="RM">Rome (RM)</option>
+                            <option value="RO">Rovigo (RO)</option>
+                            <option value="SA">Salerno (SA)</option>
+                            <option value="SS">Sassari (SS)</option>
+                            <option value="SV">Savona (SV)</option>
+                            <option value="SI">Siena (SI)</option>
+                            <option value="SO">Sondrio (SO)</option>
+                            <option value="SU">South Sardinia (SU)</option>
+                            <option value="BZ">South Tyrol (BZ)</option>
+                            <option value="SR">Syracuse (SR)</option>
+                            <option value="TA">Taranto (TA)</option>
+                            <option value="TE">Teramo (TE)</option>
+                            <option value="TR">Terni (TR)</option>
+                            <option value="TP">Trapani (TP)</option>
+                            <option value="TN">Trento (TN)</option>
+                            <option value="TV">Treviso (TV)</option>
+                            <option value="TS">Trieste (TS)</option>
+                            <option value="TO">Turin (TO)</option>
+                            <option value="UD">Udine (UD)</option>
+                            <option value="VA">Varese (VA)</option>
+                            <option value="VE">Venice (VE)</option>
+                            <option value="VB">Verbano-Cusio-Ossola (VB)</option>
+                            <option value="VC">Vercelli (VC)</option>
+                            <option value="VR">Verona (VR)</option>
+                            <option value="VV">Vibo Valentia (VV)</option>
+                            <option value="VI">Vicenza (VI)</option>
+                            <option value="VT">Viterbo (VT)</option>
+                        </select>
+                        <!-- <div class="inputContainer">
+                    <input type="number" class="text-input" name="" id="postalCode" placeholder="" required>
+                    <label for="postalCode">Codice Postale</label>
+                </div> -->
+                    </div>
+
+                    <div class="order_details_conta ">
+                        <div class="total_value_conta">
+                            <div class="selected_pillow_img">
+
+                            </div>
+                            <h5 class="total_order_value">
+                                Sommario dell’ordine
+                            </h5>
+                        </div>
+                        <div class="total_breakdown ">
+
+                        </div>
+                    </div>
+
+                    <p class="consent-text">
+                        Effettuando l'ordine, accetti i <a href="#terms-and-condition-content"
+                            class="open-terms-and-conditions terms-link"> Termini di Acquisto</a>.<br>
+                        Consulta la <a href="#privacy-policy-content" class="open-privacy-policy terms-link">Privacy
+                            Policy</a> di BMM.
+                    </p>
+                    <button type="submit">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="25" height="24" viewBox="0 0 25 24" fill="none">
+                            <g clip-path="url(#clip0_290_3649)">
+                                <path
+                                    d="M17.71 9L13.33 2.44C13.14 2.16 12.82 2.02 12.5 2.02C12.18 2.02 11.86 2.16 11.67 2.45L7.29 9H2.5C1.95 9 1.5 9.45 1.5 10C1.5 10.09 1.51 10.18 1.54 10.27L4.08 19.54C4.31 20.38 5.08 21 6 21H19C19.92 21 20.69 20.38 20.93 19.54L23.47 10.27L23.5 10C23.5 9.45 23.05 9 22.5 9H17.71ZM9.5 9L12.5 4.6L15.5 9H9.5ZM12.5 17C11.4 17 10.5 16.1 10.5 15C10.5 13.9 11.4 13 12.5 13C13.6 13 14.5 13.9 14.5 15C14.5 16.1 13.6 17 12.5 17Z"
+                                    fill="#201E1E" />
+                            </g>
+                            <defs>
+                                <clipPath id="clip0_290_3649">
+                                    <rect width="24" height="24" fill="white" transform="translate(0.5)" />
+                                </clipPath>
+                            </defs>
+                        </svg>
+                        <span>Completa acquisto</span>
+                    </button>
+                </div>
+                <h4 class="certificate_title">
+                    <svg style="margin-right: 10px;" xmlns="http://www.w3.org/2000/svg" width="24" height="24"
+                        viewBox="0 0 24 24" fill="none">
+                        <path
+                            d="M9.79997 13.4884L10.6269 10.7731L8.45193 9.09613H11.1577L12 6.3923L12.8423 9.09613H15.548L13.3576 10.7731L14.1846 13.4884L12 11.8L9.79997 13.4884ZM6.5 22.2307V15.073C5.86667 14.4115 5.375 13.6468 5.025 12.7788C4.675 11.9109 4.5 10.9846 4.5 9.99998C4.5 7.90768 5.22692 6.13461 6.68077 4.68078C8.13461 3.22693 9.90767 2.5 12 2.5C14.0923 2.5 15.8653 3.22693 17.3192 4.68078C18.773 6.13461 19.5 7.90768 19.5 9.99998C19.5 10.9846 19.325 11.9109 18.975 12.7788C18.625 13.6468 18.1333 14.4115 17.5 15.073V22.2307L12 20.4807L6.5 22.2307V22.2307ZM12 16C13.6666 16 15.0833 15.4166 16.25 14.25C17.4166 13.0833 18 11.6666 18 9.99998C18 8.33331 17.4166 6.91664 16.25 5.74998C15.0833 4.58331 13.6666 3.99998 12 3.99998C10.3333 3.99998 8.91664 4.58331 7.74997 5.74998C6.58331 6.91664 5.99997 8.33331 5.99997 9.99998C5.99997 11.6666 6.58331 13.0833 7.74997 14.25C8.91664 15.4166 10.3333 16 12 16ZM7.99997 20.0346L12 18.9615L16 20.0346V16.3192C15.4295 16.691 14.8051 16.9807 14.1269 17.1884C13.4487 17.3961 12.7397 17.5 12 17.5C11.2602 17.5 10.5512 17.3961 9.87305 17.1884C9.19485 16.9807 8.57049 16.691 7.99997 16.3192V20.0346Z"
+                            fill="#019444" />
+                    </svg>
+                    <span>14 Giorni di Garanzia di Rimborso!</span>
+                </h4>
+            </form>
+            <div class="whatsapp-contact align-center">
+                <a class="cta_button" href="https://wa.me/393347961875?text=Ciao.%20Voglio%20saperne%20di%20più%20sul%20Cuscino%20BMM!
+            " target="_blank" rel="noopener noreferrer">
+                    <span class="button-wrap">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 32 32" fill="none">
+                            <g clip-path="url(#clip0_195_194)">
+                                <path
+                                    d="M0.572021 31.7685L2.75292 23.8133C1.40878 21.4798 0.698564 18.8424 0.698564 16.1287C0.698564 7.65815 7.59667 0.767914 16.0593 0.767914C20.168 0.767914 24.023 2.36575 26.9311 5.27381C29.8307 8.1734 31.4285 12.0369 31.4285 16.1371C31.4285 24.6076 24.5304 31.4979 16.0678 31.4979H16.0593C13.4891 31.4979 10.9619 30.8555 8.72163 29.6294L0.572021 31.7685ZM9.09339 26.857L9.55839 27.1361C11.5195 28.3028 13.7682 28.9113 16.0593 28.9198H16.0678C23.11 28.9198 28.8329 23.1963 28.8329 16.1547C28.8329 12.7392 27.5057 9.5351 25.0965 7.12594C22.6874 4.71678 19.4832 3.38112 16.0678 3.38112C9.02558 3.38112 3.29421 9.10461 3.29421 16.1462C3.29421 18.5554 3.97052 20.9058 5.24685 22.9432L5.5514 23.4252L4.25812 28.1339L9.09339 26.857Z"
+                                    fill="white"></path>
+                                <path
+                                    d="M1.10425 31.2357L3.20946 23.5511C1.90771 21.3024 1.2314 18.7491 1.2314 16.1371C1.2314 7.96209 7.88429 1.3092 16.0593 1.3092C20.0239 1.3092 23.7524 2.85618 26.5503 5.65465C29.3488 8.46161 30.8957 12.181 30.8873 16.1456C30.8873 24.3207 24.2344 30.9735 16.0593 30.9735H16.0508C13.5654 30.9735 11.1308 30.3481 8.96687 29.1729L1.10425 31.2357Z"
+                                    fill="url(#paint0_linear_195_194)"></path>
+                                <path
+                                    d="M0.572021 31.7685L2.75292 23.8133C1.40878 21.4798 0.698564 18.8424 0.698564 16.1287C0.698564 7.65815 7.59667 0.767914 16.0593 0.767914C20.168 0.767914 24.023 2.36575 26.9311 5.27381C29.8307 8.1734 31.4285 12.0369 31.4285 16.1371C31.4285 24.6076 24.5304 31.4979 16.0678 31.4979H16.0593C13.4891 31.4979 10.9619 30.8555 8.72163 29.6294L0.572021 31.7685ZM9.09339 26.857L9.55839 27.1361C11.5195 28.3028 13.7682 28.9113 16.0593 28.9198H16.0678C23.11 28.9198 28.8329 23.1963 28.8329 16.1547C28.8329 12.7392 27.5057 9.5351 25.0965 7.12594C22.6874 4.71678 19.4832 3.38112 16.0678 3.38112C9.02558 3.38112 3.29421 9.10461 3.29421 16.1462C3.29421 18.5554 3.97052 20.9058 5.24685 22.9432L5.5514 23.4252L4.25812 28.1339L9.09339 26.857Z"
+                                    fill="url(#paint1_linear_195_194)"></path>
+                                <path
+                                    d="M12.2213 9.71251C11.9337 9.07011 11.6297 9.06163 11.3591 9.05315C11.1393 9.04468 10.8771 9.04468 10.6234 9.04468C10.3697 9.04468 9.9556 9.13792 9.60079 9.52663C9.24599 9.90687 8.25665 10.8369 8.25665 12.7308C8.25665 14.6162 9.6347 16.4417 9.82058 16.7039C10.0149 16.9575 12.475 20.9561 16.3808 22.4946C19.6274 23.7709 20.2867 23.5172 20.9878 23.4585C21.6896 23.3907 23.262 22.5285 23.5829 21.6324C23.9044 20.7363 23.9044 19.9667 23.8027 19.8063C23.7094 19.6458 23.4479 19.5526 23.067 19.3582C22.6868 19.1639 20.7929 18.2339 20.4466 18.1073C20.0918 17.9808 19.8381 17.913 19.5844 18.3017C19.3307 18.6819 18.595 19.5526 18.3668 19.8063C18.147 20.06 17.9187 20.0939 17.5385 19.8995C17.1583 19.7052 15.9152 19.2995 14.453 17.9971C13.3117 16.983 12.5428 15.723 12.3145 15.3428C12.0947 14.9625 12.2891 14.7512 12.4834 14.5569C12.6524 14.3879 12.8637 14.1088 13.058 13.8806C13.2524 13.6523 13.3117 13.5003 13.4383 13.2382C13.5648 12.9845 13.5061 12.7562 13.4043 12.5618C13.3117 12.3669 12.5676 10.4736 12.2213 9.71251Z"
+                                    fill="white"></path>
+                            </g>
+                            <defs>
+                                <linearGradient id="paint0_linear_195_194" x1="15.9958" y1="31.2359" x2="15.9958"
+                                    y2="1.30956" gradientUnits="userSpaceOnUse">
+                                    <stop stop-color="#20B038"></stop>
+                                    <stop offset="1" stop-color="#60D66A"></stop>
+                                </linearGradient>
+                                <linearGradient id="paint1_linear_195_194" x1="16" y1="31.7685" x2="16" y2="0.76852"
+                                    gradientUnits="userSpaceOnUse">
+                                    <stop stop-color="#F9F9F9"></stop>
+                                    <stop offset="1" stop-color="white"></stop>
+                                </linearGradient>
+                                <clipPath id="clip0_195_194">
+                                    <rect width="31" height="31" fill="white" transform="translate(0.5 0.771545)">
+                                    </rect>
+                                </clipPath>
+                            </defs>
+                        </svg>
+                        <span>Difficoltà ad acquistare? Clicca per Whatsapp!</span>
+                    </span>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <section class="simple-image-text">
+        <div class="content-wrapper">
+            <div class="image-text_conta align-center mb20">
+                <div class="image-conta">
+                    <img src="./Red_logo.svg" alt="">
+                </div>
+                <div class="text-conta">
+                    <h2>Dispositivo Medico </h2>
+                    <p>I prodotti BMM Accessori, realizzati interamente in Italia, sono classificati come dispositivi
+                        medici di classe I e registrati presso il Ministero della Salute, conformi alla direttiva CEE
+                        93/42.</p>
+                </div>
+            </div>
+            <div class="image-text_conta align-center mb20">
+                <div class="image-conta">
+                    <img src="./Rimborso.svg" alt="">
+                </div>
+                <div class="text-conta">
+                    <h2>14 Giorni Di Garanzia di Rimborso</h2>
+                    <p>Se non sei completamente soddisfatto del tuo acquisto per qualsiasi motivo, hai 14 giorni per
+                        restituire il prodotto e ricevere il rimborso completo del prezzo pagato.</p>
+                </div>
+            </div>
+            <div class="image-text_conta align-center mb20">
+                <div class="image-conta">
+                    <img src="./Made_in_italy.svg" alt="">
+                </div>
+                <div class="text-conta">
+                    <h2>Azienda Italiana</h2>
+                    <p>La nostra azienda è toscana e siamo orgogliosi di affermare che tutti i nostri prodotti sono
+                        interamente realizzati in Italia.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="rating-reviews">
+        <div class="content-wrapper">
+            <div class="feedback-container conta-1">
+                <h4>SITO ECCEZIONALE PER ACQUISTI ON LINE</h4>
+                <p>Sito eccezionale per acquisti on line, precisi e puntuali nelle consegne è facile da utilizzare</p>
+                <div class="ratings">
+                    <div class="stars-container">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="25" height="24" viewBox="0 0 25 24" fill="none">
+                            <g clip-path="url(#clip0_208_679)">
+                                <rect width="24" height="24" transform="translate(0.5)" fill="#00B67A" />
+                                <path
+                                    d="M12.5 17.27L18.68 21L17.04 13.97L22.5 9.24L15.31 8.63L12.5 2L9.69 8.63L2.5 9.24L7.96 13.97L6.32 21L12.5 17.27Z"
+                                    fill="white" />
+                            </g>
+                            <defs>
+                                <clipPath id="clip0_208_679">
+                                    <rect width="24" height="24" fill="white" transform="translate(0.5)" />
+                                </clipPath>
+                            </defs>
+                        </svg>
+                        <svg xmlns="http://www.w3.org/2000/svg" width="25" height="24" viewBox="0 0 25 24" fill="none">
+                            <g clip-path="url(#clip0_208_679)">
+                                <rect width="24" height="24" transform="translate(0.5)" fill="#00B67A" />
+                                <path
+                                    d="M12.5 17.27L18.68 21L17.04 13.97L22.5 9.24L15.31 8.63L12.5 2L9.69 8.63L2.5 9.24L7.96 13.97L6.32 21L12.5 17.27Z"
+                                    fill="white" />
+                            </g>
+                            <defs>
+                                <clipPath id="clip0_208_679">
+                                    <rect width="24" height="24" fill="white" transform="translate(0.5)" />
+                                </clipPath>
+                            </defs>
+                        </svg>
+                        <svg xmlns="http://www.w3.org/2000/svg" width="25" height="24" viewBox="0 0 25 24" fill="none">
+                            <g clip-path="url(#clip0_208_679)">
+                                <rect width="24" height="24" transform="translate(0.5)" fill="#00B67A" />
+                                <path
+                                    d="M12.5 17.27L18.68 21L17.04 13.97L22.5 9.24L15.31 8.63L12.5 2L9.69 8.63L2.5 9.24L7.96 13.97L6.32 21L12.5 17.27Z"
+                                    fill="white" />
+                            </g>
+                            <defs>
+                                <clipPath id="clip0_208_679">
+                                    <rect width="24" height="24" fill="white" transform="translate(0.5)" />
+                                </clipPath>
+                            </defs>
+                        </svg>
+                        <svg xmlns="http://www.w3.org/2000/svg" width="25" height="24" viewBox="0 0 25 24" fill="none">
+                            <g clip-path="url(#clip0_208_679)">
+                                <rect width="24" height="24" transform="translate(0.5)" fill="#00B67A" />
+                                <path
+                                    d="M12.5 17.27L18.68 21L17.04 13.97L22.5 9.24L15.31 8.63L12.5 2L9.69 8.63L2.5 9.24L7.96 13.97L6.32 21L12.5 17.27Z"
+                                    fill="white" />
+                            </g>
+                            <defs>
+                                <clipPath id="clip0_208_679">
+                                    <rect width="24" height="24" fill="white" transform="translate(0.5)" />
+                                </clipPath>
+                            </defs>
+                        </svg>
+                        <svg xmlns="http://www.w3.org/2000/svg" width="25" height="24" viewBox="0 0 25 24" fill="none">
+                            <g clip-path="url(#clip0_208_679)">
+                                <rect width="24" height="24" transform="translate(0.5)" fill="#00B67A" />
+                                <path
+                                    d="M12.5 17.27L18.68 21L17.04 13.97L22.5 9.24L15.31 8.63L12.5 2L9.69 8.63L2.5 9.24L7.96 13.97L6.32 21L12.5 17.27Z"
+                                    fill="white" />
+                            </g>
+                            <defs>
+                                <clipPath id="clip0_208_679">
+                                    <rect width="24" height="24" fill="white" transform="translate(0.5)" />
+                                </clipPath>
+                            </defs>
+                        </svg>
+                    </div>
+                </div>
+                <div class="name-date">
+                    <p><strong>Valeriano - </strong>16 ott 2023</p>
+                    <img src="./verified.svg" alt="" sizes="" srcset="">
+                </div>
+            </div>
+
+            <div class="feedback-container conta-2">
+                <h4>CONSIGLIO ASSOLUTAMENTE</h4>
+                <p>Da consigliare assolutamente! La mia esperienza di acquisto è stata decisamente positiva. Sono stati
+                    molto professionali, cordiali, e disponibili a fornirmi tutte le informazioni richieste. La
+                    spedizione è stata super veloce. Gli articoli acquistati sono di ottima qualità e totalmente
+                    corrispondenti alle caratteristiche descritte. Farò sicuramente altri acquisti. Top!!!!</p>
+                <div class="ratings">
+                    <div class="stars-container">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="25" height="24" viewBox="0 0 25 24" fill="none">
+                            <g clip-path="url(#clip0_208_679)">
+                                <rect width="24" height="24" transform="translate(0.5)" fill="#00B67A" />
+                                <path
+                                    d="M12.5 17.27L18.68 21L17.04 13.97L22.5 9.24L15.31 8.63L12.5 2L9.69 8.63L2.5 9.24L7.96 13.97L6.32 21L12.5 17.27Z"
+                                    fill="white" />
+                            </g>
+                            <defs>
+                                <clipPath id="clip0_208_679">
+                                    <rect width="24" height="24" fill="white" transform="translate(0.5)" />
+                                </clipPath>
+                            </defs>
+                        </svg>
+                        <svg xmlns="http://www.w3.org/2000/svg" width="25" height="24" viewBox="0 0 25 24" fill="none">
+                            <g clip-path="url(#clip0_208_679)">
+                                <rect width="24" height="24" transform="translate(0.5)" fill="#00B67A" />
+                                <path
+                                    d="M12.5 17.27L18.68 21L17.04 13.97L22.5 9.24L15.31 8.63L12.5 2L9.69 8.63L2.5 9.24L7.96 13.97L6.32 21L12.5 17.27Z"
+                                    fill="white" />
+                            </g>
+                            <defs>
+                                <clipPath id="clip0_208_679">
+                                    <rect width="24" height="24" fill="white" transform="translate(0.5)" />
+                                </clipPath>
+                            </defs>
+                        </svg>
+                        <svg xmlns="http://www.w3.org/2000/svg" width="25" height="24" viewBox="0 0 25 24" fill="none">
+                            <g clip-path="url(#clip0_208_679)">
+                                <rect width="24" height="24" transform="translate(0.5)" fill="#00B67A" />
+                                <path
+                                    d="M12.5 17.27L18.68 21L17.04 13.97L22.5 9.24L15.31 8.63L12.5 2L9.69 8.63L2.5 9.24L7.96 13.97L6.32 21L12.5 17.27Z"
+                                    fill="white" />
+                            </g>
+                            <defs>
+                                <clipPath id="clip0_208_679">
+                                    <rect width="24" height="24" fill="white" transform="translate(0.5)" />
+                                </clipPath>
+                            </defs>
+                        </svg>
+                        <svg xmlns="http://www.w3.org/2000/svg" width="25" height="24" viewBox="0 0 25 24" fill="none">
+                            <g clip-path="url(#clip0_208_679)">
+                                <rect width="24" height="24" transform="translate(0.5)" fill="#00B67A" />
+                                <path
+                                    d="M12.5 17.27L18.68 21L17.04 13.97L22.5 9.24L15.31 8.63L12.5 2L9.69 8.63L2.5 9.24L7.96 13.97L6.32 21L12.5 17.27Z"
+                                    fill="white" />
+                            </g>
+                            <defs>
+                                <clipPath id="clip0_208_679">
+                                    <rect width="24" height="24" fill="white" transform="translate(0.5)" />
+                                </clipPath>
+                            </defs>
+                        </svg>
+                        <svg xmlns="http://www.w3.org/2000/svg" width="25" height="24" viewBox="0 0 25 24" fill="none">
+                            <g clip-path="url(#clip0_208_679)">
+                                <rect width="24" height="24" transform="translate(0.5)" fill="#00B67A" />
+                                <path
+                                    d="M12.5 17.27L18.68 21L17.04 13.97L22.5 9.24L15.31 8.63L12.5 2L9.69 8.63L2.5 9.24L7.96 13.97L6.32 21L12.5 17.27Z"
+                                    fill="white" />
+                            </g>
+                            <defs>
+                                <clipPath id="clip0_208_679">
+                                    <rect width="24" height="24" fill="white" transform="translate(0.5)" />
+                                </clipPath>
+                            </defs>
+                        </svg>
+                    </div>
+                </div>
+                <div class="name-date">
+                    <p><strong>Barbara Baccini - </strong>25 ott 2023</p>
+                    <img src="./verified.svg" alt="" sizes="" srcset="">
+                </div>
+            </div>
+
+            <div class="feedback-container conta-3">
+                <h4>OTTIMO SITO</h4>
+                <p>Ottimo sito.Faró sicuramente altri acquisti, lo consiglio vivamente.</p>
+                <div class="ratings">
+                    <div class="stars-container">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="25" height="24" viewBox="0 0 25 24" fill="none">
+                            <g clip-path="url(#clip0_208_679)">
+                                <rect width="24" height="24" transform="translate(0.5)" fill="#00B67A" />
+                                <path
+                                    d="M12.5 17.27L18.68 21L17.04 13.97L22.5 9.24L15.31 8.63L12.5 2L9.69 8.63L2.5 9.24L7.96 13.97L6.32 21L12.5 17.27Z"
+                                    fill="white" />
+                            </g>
+                            <defs>
+                                <clipPath id="clip0_208_679">
+                                    <rect width="24" height="24" fill="white" transform="translate(0.5)" />
+                                </clipPath>
+                            </defs>
+                        </svg>
+                        <svg xmlns="http://www.w3.org/2000/svg" width="25" height="24" viewBox="0 0 25 24" fill="none">
+                            <g clip-path="url(#clip0_208_679)">
+                                <rect width="24" height="24" transform="translate(0.5)" fill="#00B67A" />
+                                <path
+                                    d="M12.5 17.27L18.68 21L17.04 13.97L22.5 9.24L15.31 8.63L12.5 2L9.69 8.63L2.5 9.24L7.96 13.97L6.32 21L12.5 17.27Z"
+                                    fill="white" />
+                            </g>
+                            <defs>
+                                <clipPath id="clip0_208_679">
+                                    <rect width="24" height="24" fill="white" transform="translate(0.5)" />
+                                </clipPath>
+                            </defs>
+                        </svg>
+                        <svg xmlns="http://www.w3.org/2000/svg" width="25" height="24" viewBox="0 0 25 24" fill="none">
+                            <g clip-path="url(#clip0_208_679)">
+                                <rect width="24" height="24" transform="translate(0.5)" fill="#00B67A" />
+                                <path
+                                    d="M12.5 17.27L18.68 21L17.04 13.97L22.5 9.24L15.31 8.63L12.5 2L9.69 8.63L2.5 9.24L7.96 13.97L6.32 21L12.5 17.27Z"
+                                    fill="white" />
+                            </g>
+                            <defs>
+                                <clipPath id="clip0_208_679">
+                                    <rect width="24" height="24" fill="white" transform="translate(0.5)" />
+                                </clipPath>
+                            </defs>
+                        </svg>
+                        <svg xmlns="http://www.w3.org/2000/svg" width="25" height="24" viewBox="0 0 25 24" fill="none">
+                            <g clip-path="url(#clip0_208_679)">
+                                <rect width="24" height="24" transform="translate(0.5)" fill="#00B67A" />
+                                <path
+                                    d="M12.5 17.27L18.68 21L17.04 13.97L22.5 9.24L15.31 8.63L12.5 2L9.69 8.63L2.5 9.24L7.96 13.97L6.32 21L12.5 17.27Z"
+                                    fill="white" />
+                            </g>
+                            <defs>
+                                <clipPath id="clip0_208_679">
+                                    <rect width="24" height="24" fill="white" transform="translate(0.5)" />
+                                </clipPath>
+                            </defs>
+                        </svg>
+                        <svg xmlns="http://www.w3.org/2000/svg" width="25" height="24" viewBox="0 0 25 24" fill="none">
+                            <g clip-path="url(#clip0_208_679)">
+                                <rect width="24" height="24" transform="translate(0.5)" fill="#00B67A" />
+                                <path
+                                    d="M12.5 17.27L18.68 21L17.04 13.97L22.5 9.24L15.31 8.63L12.5 2L9.69 8.63L2.5 9.24L7.96 13.97L6.32 21L12.5 17.27Z"
+                                    fill="white" />
+                            </g>
+                            <defs>
+                                <clipPath id="clip0_208_679">
+                                    <rect width="24" height="24" fill="white" transform="translate(0.5)" />
+                                </clipPath>
+                            </defs>
+                        </svg>
+                    </div>
+                </div>
+                <div class="name-date">
+                    <p><strong>Elena Pacini - </strong>31 ott 2023</p>
+                    <img src="./verified.svg" alt="" sizes="" srcset="">
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- Privacy policy content -->
+    <section id="privacy-policy-content" class="mfp-hide popup-section">
+        <div class="content-wrapper">
+            <div class="popup-content-wrap">
+                <h2>Informativa sulla privacy </h2>
+                <p>Aggiornata il 12 febbraio 2024.</p>
+                <p>Questo documento ("Politica della Privacy") per PN 6742 NET di Francesco Bertini ("noi", "nostro/a")
+                    dettaglia come e perch&amp;eacute; potremmo raccogliere, memorizzare, utilizzare e/o condividere
+                    ("elaborare") le tue informazioni quando interagisci con i nostri Servizi.</p>
+                <p>Questo comprende le istanze in cui navighi sul nostro sito web a https://www.bemymood.com/ o su
+                    qualsiasi dei nostri siti web a cui questa Politica della Privacy &amp;egrave; collegata.</p>
+                <p>NON CONDIVIDERE NESSUNA INFORMAZIONE CON NOI SE NON RISPETTI I SEGUENTI CRITERI: (A) DEVI ESSERE
+                    MAGGIORENNE, OVVERO AVERE ALMENO 18 ANNI, E (B) NON DEVI ESSERE NOSTRO CONCORRENTE DIRETTO O
+                    INDIRETTO.</p>
+                <p>Se hai domande o preoccupazioni, la revisione di questa Politica della Privacy ti aiuter&amp;agrave;
+                    a comprendere i tuoi diritti e scelte in materia di privacy. Se non sei d'accordo con le nostre
+                    politiche e pratiche, ti raccomandiamo di non utilizzare i nostri Servizi.</p>
+                <h2>PANORAMICA SULLA RACCOLTA DI INFORMAZIONI</h2>
+                <h3>Informazioni Personali Che Condividi Con Noi</h3>
+                <p>Raccogliamo le informazioni personali che ci fornisci. Questo avviene quando ti registri ai nostri
+                    Servizi, mostri interesse per i nostri prodotti e Servizi, partecipi ad attivit&amp;agrave; o ci
+                    contatti. Il tipo di informazioni che raccogliamo include:</p>
+                <ul>
+                    <li>Nome e cognome,</li>
+                    <li>Numero di telefono,</li>
+                    <li>Email,</li>
+                    <li>Indirizzo postale,</li>
+                    <li>Nome utente,</li>
+                    <li>Password,</li>
+                    <li>Preferenze di contatto,</li>
+                    <li>Indirizzo di fatturazione,</li>
+                    <li>Genere,</li>
+                    <li>Indirizzo IP,</li>
+                    <li>Data di nascita.</li>
+                </ul>
+                <p>Informazioni di Pagamento: Se effettui acquisti, avremo bisogno dei tuoi dettagli di pagamento come
+                    il numero della carta e il codice di sicurezza. PayPal e Stripe memorizzano questi dati. Puoi
+                    leggere le loro politiche sulla privacy qui: Privacy di PayPal e Privacy di Stripe.</p>
+                <p>Informazioni di Accesso ai Social Media: Puoi registrarti utilizzando i tuoi account sui social
+                    media, come Facebook o Twitter. Per maggiori dettagli, si prega di vedere la sezione "GESTIONE DEGLI
+                    ACCESSI AI SOCIAL MEDIA".</p>
+                <p>&amp;Egrave; importante mantenere le tue informazioni personali accurate e aggiornate.</p>
+                <h3>Informazioni Raccolte Automaticamente</h3>
+                <p>Questa sezione spiega cosa viene raccolto automaticamente, come viene utilizzato e i tuoi diritti
+                    riguardo ai tuoi dati.</p>
+                <ul>
+                    <li><b>Indirizzi IP:</b> Raccogliamo e conserviamo il tuo indirizzo IP per soddisfare obblighi
+                        normativi e legali. La raccolta di questi dati è essenziale per identificare e mitigare attività
+                        fraudolente e garantire la sicurezza dei nostri Servizi.</li>
+                    <ul>
+                        <li><strong>Uso dei Dati Raccolti:</strong> I dati dell'indirizzo IP che raccogliamo sono
+                            utilizzati esclusivamente per scopi di sicurezza, in particolare per indagare e prevenire
+                            attività fraudolente o illegali. Questo ci permette di proteggere i nostri Servizi e i
+                            nostri utenti da vari tipi di truffe.</li>
+                        <li><strong>Condivisione dei Dati:</strong> L'accesso ai tuoi dati dell'indirizzo IP è
+                            fortemente limitato e può essere fornito solo alle forze dell'ordine su ricevimento di un
+                            rapporto di polizia valido o di un ordine del tribunale. In tali casi, i dati possono essere
+                            condivisi con la polizia, tribunali o enti governativi simili come richiesto dalla legge.
+                        </li>
+                        <li><strong>Conservazione dei Dati:</strong> In aderenza agli obblighi legali, conserviamo i
+                            dati dell'indirizzo IP raccolti per 2 anni. Questo periodo di conservazione è stabilito
+                            nell'implementazione della legislazione europea sulla conservazione dei dati del traffico
+                            telematico, finalizzata a facilitare le indagini su attività illegali.</li>
+                        <li><strong>I Tuoi Diritti:</strong> A causa degli specifici obblighi legali che governano la
+                            raccolta e la conservazione dei dati dell'indirizzo IP, gli utenti non sono in grado di
+                            accedere, correggere, cancellare o opporsi alla conservazione di questi dati. Questa
+                            limitazione è una diretta conseguenza dell'obbligo legale di conservare tali dati per scopi
+                            investigativi e di sicurezza.</li>
+                    </ul>
+                    <li><b>Dati di Localizzazione Approssimativa:</b> Raccogliamo automaticamente dati di localizzazione
+                        approssimativa in base al luogo da cui ti connetti (ad es., "Stato di New York, USA", "Madrid,
+                        Spagna" o "Lombardia, Italia") per migliorare i nostri Servizi. Queste informazioni non
+                        sensibili non sono conservate e sono utilizzate esclusivamente per migliorare la tua esperienza.
+                        Puoi scegliere di non condividere queste informazioni aggiustando le impostazioni del tuo
+                        dispositivo, il che potrebbe influire sulla funzionalità dei nostri Servizi.</li>
+                </ul>
+                <h2>METODI DI ELABORAZIONE DELLE INFORMAZIONI</h2>
+                <p>Escludendo le informazioni che raccogliamo automaticamente, ecco come utilizziamo le informazioni
+                    personali che ci fornisci espressamente:</p>
+                <ul>
+                    <li>Gestione dell'Account: Utilizziamo le tue informazioni per aiutarti a creare e accedere al tuo
+                        account, e per mantenerlo attivo senza problemi.</li>
+                    <li>Fornitura del Servizio: Le tue informazioni ci aiutano a fornire i Servizi che richiedi.</li>
+                    <li>Supporto agli Utenti: Utilizziamo le tue informazioni per rispondere alle tue domande e
+                        risolvere eventuali problemi con i nostri Servizi.</li>
+                    <li>Informazioni Amministrative: Ti inviamo aggiornamenti importanti sui nostri Servizi, cambiamenti
+                        di policy e altri dettagli simili.</li>
+                    <li>Gestione degli Ordini: Gestiamo i tuoi ordini, pagamenti, resi e cambi utilizzando le tue
+                        informazioni.</li>
+                    <li>Richieste di Feedback: Potremmo chiedere il tuo feedback sui nostri Servizi utilizzando le tue
+                        informazioni.</li>
+                    <li>Messaggi di Marketing: Con il tuo permesso, usiamo le tue informazioni per inviarti messaggi
+                        promozionali e di marketing. Puoi rinunciare a questi in qualsiasi momento. Maggiori dettagli
+                        nella sezione "I TUOI DIRITTI SULLA PRIVACY SPIEGATI" qui sotto.</li>
+                    <li>Pubblicità Mirata: Con il tuo permesso, personalizziamo annunci e contenuti per te basandoci
+                        sulle tue informazioni. Puoi rinunciare a questi in qualsiasi momento. Per maggiori
+                        informazioni, consulta la nostra Informativa sui Cookie: <a
+                            href="https://www.bemymood.com/negozio-online/cookie"
+                            target="_blank">https://www.bemymood.com/negozio-online/cookie</a>.</li>
+                    <li>Efficacia del Marketing: Con il tuo permesso, analizziamo le tue informazioni per migliorare il
+                        nostro marketing e le promozioni. Puoi rinunciare a questi in qualsiasi momento. Per maggiori
+                        informazioni, consulta la nostra Informativa sui Cookie: <a
+                            href="https://www.bemymood.com/negozio-online/cookie"
+                            target="_blank">https://www.bemymood.com/negozio-online/cookie</a>.</li>
+                </ul>
+                <h2>BASE LEGALE PER L'ELABORAZIONE DELLE INFORMAZIONI</h2>
+                <p>Residenti nell'UE o nel Regno Unito: Ai sensi del GDPR e del GDPR del Regno Unito, abbiamo valide
+                    ragioni legali per elaborare le tue informazioni personali. Queste includono:</p>
+                <ul>
+                    <li>Consenso: Utilizziamo le tue informazioni se ci hai dato il permesso per scopi specifici. Puoi
+                        revocare questo consenso in qualsiasi momento.</li>
+                    <li>Esecuzione del Contratto: Elaboriamo le tue informazioni per adempiere al nostro contratto con
+                        te, inclusa la fornitura di servizi o rispondendo alle tue richieste prima di un contratto.</li>
+                    <li>Interessi Legittimi: Potremmo usare le tue informazioni per i nostri interessi commerciali, come
+                        l'invio di offerte speciali, la visualizzazione di annunci personalizzati, il supporto alle
+                        attivit&amp;agrave; di marketing, la prevenzione delle frodi, o il miglioramento dell'esperienza
+                        utente. Ci assicuriamo che i nostri interessi non prevarichino i tuoi diritti e
+                        libert&amp;agrave;.</li>
+                    <li>Obblighi Legali: Utilizziamo le tue informazioni per conformarci agli obblighi legali, come la
+                        cooperazione con le forze dell'ordine o in procedimenti legali.</li>
+                    <li>Interessi Vitali: Potremmo elaborare le tue informazioni per proteggere la vita di qualcuno,
+                        come in situazioni di emergenza.</li>
+                </ul>
+                <p>Residenti in Canada: Utilizziamo le tue informazioni con il tuo consenso esplicito o implicito. Puoi
+                    revocare il consenso in qualsiasi momento. In certi casi, potremmo elaborare le tue informazioni
+                    senza consenso, come:</p>
+                <ul>
+                    <li>Se &amp;egrave; urgentemente necessario e il consenso non pu&amp;ograve; essere ottenuto
+                        rapidamente.</li>
+                    <li>Per la rilevazione e le indagini di frode.</li>
+                    <li>In transazioni commerciali sotto specifiche condizioni.</li>
+                    <li>In reclami assicurativi o per identificare persone in emergenze.</li>
+                    <li>Se sospettiamo abusi finanziari.</li>
+                    <li>Se raccogliere con il consenso potrebbe influenzare l'accuratezza o la disponibilit&amp;agrave;
+                        delle informazioni, specialmente in indagini legali.</li>
+                    <li>Per conformarsi a ordini legali come citazioni o ordinanze del tribunale.</li>
+                    <li>Se &amp;egrave; per scopi giornalistici, artistici o letterari.</li>
+                    <li>Se le informazioni sono gi&amp;agrave; disponibili pubblicamente come specificato dai
+                        regolamenti.</li>
+                </ul>
+                <h2>CONDIVISIONE DELLE INFORMAZIONI PERSONALI</h2>
+                <p>Ecco quando e con chi potremmo condividere le tue informazioni:</p>
+                <ul>
+                    <li>Trasferimenti Aziendali: Se attraversiamo un cambiamento aziendale come una fusione, vendita di
+                        asset, finanziamento o acquisizione, potremmo condividere o trasferire le tue informazioni ad
+                        un'altra azienda. In questo caso sarai notificato via email.</li>
+                    <li>Affiliati: Potremmo condividere le tue informazioni con i nostri affiliati. Questo include la
+                        nostra società madre, filiali, partner in joint venture o altre società correlate. Ci
+                        assicuriamo che seguano questo avviso sulla privacy.</li>
+                    <li>Partner Commerciali: Potremmo condividere le tue informazioni con i nostri partner commerciali
+                        per offrirti prodotti specifici, Servizi o promozioni.</li>
+                </ul> Utilizzando i nostri Servizi potremmo condividere le tue informazioni con i seguenti Partner
+                Commerciali: <p> <b><u>Cloudflare (Cloudflare Inc.)</u></b><br> Un servizio di distribuzione del
+                    traffico fornito da Cloudflare Inc. <br><b>Dati Personali Elaborati:</b> Nome e cognome, Numero di
+                    telefono, Email, Indirizzo postale, Nome utente, Password, Preferenze di contatto, Indirizzo di
+                    fatturazione, Genere, Data di nascita, Indirizzo IP, Cronologia di navigazione, Informazioni di
+                    pagamento e Dettagli dell'ordine. <br><b>Luogo di elaborazione</b>: Stati Uniti. <br><b>Categorie di
+                        Informazioni Personali Raccolte secondo il CCPA:</b> Identificativi, Informazioni Commerciali,
+                    Attività Internet o Altre Attività di Rete Simili. <br><b>Base Legale per la Condivisione dei
+                        Dati:</b> Interessi legittimi per garantire che i nostri Servizi siano sicuri, affidabili ed
+                    efficienti. Cloudflare ci supporta con firewall e archiviazione dati, essenziali per fornire un
+                    Servizio di alta qualità. </p>
+                <p> <b><u>Amazon Web Services (Amazon Web Services, Inc.)</u></b><br> Amazon Web Services (AWS) è una
+                    piattaforma di cloud computing completa ed in evoluzione. <br><b>Dati Personali Elaborati:</b> Nome
+                    e cognome, Numero di telefono, Email, Indirizzo postale, Nome utente, Password, Preferenze di
+                    contatto, Indirizzo di fatturazione, Genere, Data di nascita, Indirizzo IP, Cronologia di
+                    navigazione, Informazioni di pagamento e Dettagli dell'ordine. <br><b>Luogo di elaborazione</b>:
+                    Stati Uniti, Italia. <br><b>Categorie di Informazioni Personali Raccolte secondo il CCPA:</b>
+                    Identificativi, Informazioni Commerciali, Attività Internet o Altre Attività di Rete Simili.
+                    <br><b>Base Legale per la Condivisione dei Dati:</b> Interessi legittimi nell'utilizzare servizi di
+                    hosting robusti e soluzioni di archiviazione dati. Essenziali per mantenere alte prestazioni,
+                    sicurezza e affidabilità della nostra piattaforma. </p>
+                <p> <b><u>Fornitore della Piattaforma di E-commerce (Maxpho S.R.L.)</u></b><br> Maxpho SRL (Maxpho) è un
+                    fornitore di piattaforme di e-commerce ed è impegnato a proteggere la privacy dei suoi utenti. Gli
+                    utenti possono condividere informazioni personali tramite vari metodi come moduli di contatto,
+                    creazione di account o effettuazione di ordini. <br><b>Dati Personali Elaborati:</b> Nome e cognome,
+                    Numero di telefono, Email, Indirizzo postale, Nome utente, Password, Preferenze di contatto,
+                    Indirizzo di fatturazione, Genere, Data di nascita, Indirizzo IP, Cronologia di navigazione,
+                    Informazioni di pagamento e Dettagli dell'ordine. <br><b>Luogo di elaborazione</b>: Italia.
+                    <br><b>Categorie di Informazioni Personali Raccolte secondo il CCPA:</b> Identificativi,
+                    Informazioni Commerciali, Attività Internet o Altre Attività di Rete Simili. <br><b>Base Legale per
+                        la Condivisione dei Dati:</b> Interessi legittimi, poiché Maxpho fornisce alla nostra
+                    piattaforma di e-commerce soluzioni software e hardware. Questo include servizi gestiti da Maxpho,
+                    come Cloudflare e AWS. </p>
+                <p> <b><u>Zoho PageSense (Zoho Corporation Pvt. Ltd.)</u></b><br> Zoho PageSense visualizza contenuti
+                    dinamici e fornisce analisi dei siti web. Questo servizio offre una suite di strumenti per la
+                    personalizzazione, test A/B, mappe di calore e analisi dei funnel. Notabilmente, PageSense
+                    garantisce la privacy non raccogliendo dati personali dai visitatori del sito web. I dati dei cookie
+                    utilizzati per mappare gli esperimenti non sono associati ad alcun indirizzo IP, dando priorità
+                    all'anonimato degli utenti e alla protezione dei dati. <br><b>Dati Personali Elaborati</b>: Dati di
+                    Utilizzo Anonimi. <br><b>Luogo di elaborazione</b>: Stati Uniti. <br><b>Categorie di informazioni
+                        personali raccolte secondo il CCPA:</b> Attività Internet o altre attività di rete simili
+                    (esclusi gli identificativi personali). <br><b>Base Legale per la Condivisione dei Dati:</b> Non
+                    condividiamo dati personali. </p>
+                <p> <b><u>Servizi di Pagamento (come PayPal Inc., Banco de Sabadell S.A., UniCredit S.p.A., SIA S.p.A. e
+                            Stripe Technology Europe Ltd)</u></b><br> I servizi di pagamento facilitano transazioni
+                    online sicure. <br><b>Dati Personali Elaborati:</b> Nome e dettagli di contatto (ad es., email,
+                    numero di telefono, indirizzo), Informazioni di pagamento (ad es., dettagli della carta di credito o
+                    debito), Cronologia delle transazioni, Indirizzo IP e informazioni sul dispositivo, e Dati di
+                    localizzazione. <br><b>Luoghi di elaborazione</b>: Stati Uniti. <br><b>Categorie di informazioni
+                        personali raccolte:</b> Identificativi, informazioni commerciali, dati finanziari, informazioni
+                    sulla transazione, attività Internet o altre attività di rete simili. <br><b>Base Legale per la
+                        Condivisione dei Dati:</b> Interessi legittimi nel facilitare transazioni sicure ed efficienti.
+                    Essenziali per un processo di pagamento fluido e per migliorare l'esperienza di checkout del
+                    cliente. </p>
+                <p> <b><u>La compagnia di spedizione (inclusi FedEx Corporation, BRT S.p.A., SDA Express Courier S.p.A.,
+                            General Logistics Systems B.V., DHL International GmbH, United Parcel Service, Inc., TNT
+                            Express B.V., PostNL N.V. - precedentemente noto come TNTPost, Sociedad Estatal de Correos y
+                            Telégrafos S.A. S.M.E. - Correos, United States Postal Service, Poste Italiane S.p.A.,
+                            Nexive Group S.r.l., SEUR S.A., Nacex - parte del Grupo Logista, e Schenker AG)</u></b><br>
+                    Queste compagnie di spedizione sono incaricate di consegnare i prodotti che acquisti al tuo
+                    indirizzo. <br><b>Dati Personali Elaborati:</b> il tuo nome e cognome, numero di telefono, indirizzo
+                    email, indirizzo postale e dettagli del tuo ordine. <br><b>Luogo di elaborazione:</b> L'elaborazione
+                    dei tuoi dati personali per scopi di spedizione avviene in Italia e si estende a tutti i paesi
+                    coinvolti nel transito della spedizione per raggiungere la sua destinazione finale. <br><b>Categorie
+                        di Informazioni Personali Raccolte secondo il CCPA:</b> Identificativi. <br><b>Base Legale per
+                        la Condivisione dei Dati:</b> Interessi legittimi nel garantire la consegna tempestiva e
+                    accurata degli ordini. Essenziali per adempiere ai nostri obblighi contrattuali e fornire ai clienti
+                    un'esperienza di consegna senza problemi. </p>
+                <p> <b><u>Servizio di Feedback (Trustpilot Group plc)</u></b><br> Questo è un sito web di recensioni dei
+                    consumatori che ospita recensioni di aziende in tutto il mondo. Fornisce una piattaforma per i
+                    clienti per lasciare feedback sulle loro esperienze con le aziende, aiutando altri a prendere
+                    decisioni informate. <br><b>Dati Personali Elaborati:</b> Indirizzo email. <br><b>Luoghi di
+                        elaborazione:</b> Danimarca. <br><b>Categorie di informazioni personali raccolte:</b>
+                    Identificativi. <br><b>Base Legale per la Condivisione dei Dati:</b> Interessi legittimi
+                    nell'ottenere feedback imparziale dei clienti. Questa pratica è essenziale per garantire recensioni
+                    eque e per il nostro miglioramento continuo. </p>
+                <p> <b><u>Servizi Google (Google Analytics 4 e Google Tag Manager di Google Ireland Limited)</u></b><br>
+                    Google Analytics 4 è un servizio statistico fornito da Google Ireland Limited. Google Tag Manager è
+                    un sistema di gestione dei tag. <br><b>Dati Personali Elaborati</b>: Dati di Utilizzo; Indirizzo IP;
+                    Strumenti di Tracciamento. <br><b>Luogo di elaborazione</b>: Irlanda. <br><b>Categorie di
+                        informazioni personali raccolte secondo il CCPA:</b> Identificativi, attività internet.
+                    <br><b>Base Legale per la Condivisione dei Dati:</b> Consenso esplicito per i cookie di performance
+                    richiesto per condividere dati personali. </p>
+                <p> <b><u>Google reCAPTCHA (Google Ireland Limited)</u></b><br> Google reCAPTCHA è un servizio per
+                    proteggere i siti web da spam e abusi. <br><b>Dati Personali Elaborati</b>: Dati di Utilizzo;
+                    Indirizzo IP; Strumenti di Tracciamento. <br><b>Luogo di elaborazione</b>: Irlanda. <br><b>Categorie
+                        di informazioni personali raccolte secondo il CCPA:</b> Identificativi, attività internet.
+                    <br><b>Base Legale per la Condivisione dei Dati:</b> Interessi legittimi nel prevenire spam e abusi
+                    sul nostro sito. Essenziali per proteggere il nostro sito web e migliorare la sicurezza degli
+                    utenti. </p>
+                <p> <b><u>Servizi di Pubblicità e Remarketing UE (Remarketing Google Ads, Remarketing con Google
+                            Analytics di Google Ireland Limited)</u></b><br> Pubblicità mirata basata sull'interazione
+                    dell'utente. <br><b>Dati Personali Elaborati:</b> Cookie, Dati di Utilizzo. <br><b>Luoghi di
+                        elaborazione:</b> Irlanda. <br><b>Categorie di informazioni personali raccolte:</b>
+                    Identificativi, attività internet, dati di geolocalizzazione. <br><b>Base Legale per la Condivisione
+                        dei Dati:</b> Consenso esplicito per i cookie pubblicitari richiesto per condividere dati
+                    personali. </p>
+                <p> <b><u>Servizi di Pubblicità e Remarketing USA (LinkedIn Website Retargeting di LinkedIn Corporation,
+                            Meta Custom Audience e Remarketing Meta Ads di Meta Platforms, Inc.)</u></b><br> Pubblicità
+                    mirata basata sull'interazione dell'utente. <br><b>Dati Personali Elaborati:</b> Cookie, Dati di
+                    Utilizzo. <br><b>Luoghi di elaborazione:</b> Stati Uniti. <br><b>Categorie di informazioni personali
+                        raccolte:</b> Identificativi, attività internet, dati di geolocalizzazione. <br><b>Base Legale
+                        per la Condivisione dei Dati:</b> Consenso esplicito per i cookie pubblicitari richiesto per
+                    condividere dati personali. </p>
+                <h2>USO DI COOKIE E TECNOLOGIE DI TRACCIAMENTO</h2>
+                <p>Utilizziamo cookie e tecnologie simili (come web beacon e pixel) per raccogliere o memorizzare
+                    informazioni. Puoi trovare maggiori informazioni su come usiamo queste tecnologie e come rifiutare
+                    certi cookie nella nostra Notifica sui Cookie: <a
+                        href="https://www.bemymood.com/negozio-online/cookie"
+                        target="_blank">https://www.bemymood.com/negozio-online/cookie</a>.</p>
+                <h2>GESTIONE DEGLI ACCESSI AI SOCIAL MEDIA </h2>
+                <p>I nostri Servizi ti consentono di registrarti e accedere utilizzando account sui social media (come
+                    Facebook o Twitter). Quando fai ci&amp;ograve;, otteniamo alcune informazioni del tuo profilo
+                    social. Questo di solito include il tuo nome, indirizzo email, lista di amici e immagine del
+                    profilo, insieme ad altre informazioni che rendi pubbliche sulla piattaforma social.</p>
+                <p>Utilizziamo queste informazioni come descritto in questo avviso di privacy o come chiaramente
+                    spiegato sui Servizi. Ricorda, non controlliamo come il tuo fornitore di social media usa le tue
+                    informazioni personali. Ti consigliamo di verificare il loro avviso di privacy per comprendere le
+                    loro pratiche di dati e le tue impostazioni di privacy.</p>
+                <h2>TRASFERIMENTO INTERNAZIONALE DI INFORMAZIONI</h2>
+                <p>I nostri server sono in Italia. Le tue informazioni possono essere trasferite, memorizzate o
+                    elaborate in Italia, Stati Uniti o altri paesi. Questo include i paesi con cui condividiamo le tue
+                    informazioni (come menzionato nella sezione "CONDIVISIONE DELLE INFORMAZIONI PERSONALI").</p>
+                <p>Per coloro nell'Area Economica Europea (EEA), Regno Unito o Svizzera, nota che questi paesi
+                    potrebbero non avere lo stesso livello di leggi sulla protezione dei dati come il tuo paese di
+                    origine. Nonostante ci&amp;ograve;, ci impegniamo a proteggere le tue informazioni personali come
+                    delineato in questo avviso di privacy e secondo la legge.</p>
+                <h2>PERIODO DI CONSERVAZIONE DELLE INFORMAZIONI</h2>
+                <p>Conserviamo le tue informazioni personali solo per il tempo necessario per i motivi indicati in
+                    questo avviso, o per un periodo pi&amp;ugrave; lungo se richiesto dalla legge (come per ragioni
+                    fiscali, contabili o altre ragioni legali). Non conserveremo le tue informazioni pi&amp;ugrave; a
+                    lungo del tempo in cui hai un account con noi.</p>
+                <p>Quando non c'&amp;egrave; pi&amp;ugrave; una necessit&amp;agrave; aziendale di elaborare le tue
+                    informazioni personali, le cancelleremo o le renderemo anonime. Se non possiamo cancellarle
+                    immediatamente (come quando sono negli archivi di backup), le conserveremo in modo sicuro e le
+                    proteggeremo da ulteriori elaborazioni fino a quando non potremo cancellarle.</p>
+                <h2>MISURE DI SICUREZZA DELLE INFORMAZIONI</h2>
+                <p>Abbiamo messo in atto misure di sicurezza tecniche e organizzative ragionevoli per proteggere le tue
+                    informazioni personali. Tuttavia, non possiamo garantire completamente che le tue informazioni
+                    saranno al sicuro da hacker o altre violazioni della sicurezza. Pur facendo del nostro meglio, la
+                    trasmissione di informazioni personali ai nostri Servizi e dai nostri Servizi &amp;egrave; a tuo
+                    rischio. Dovresti usare i nostri Servizi solo in un ambiente sicuro.</p>
+                <h2>RACCOLTA DI INFORMAZIONI DA MINORENNI</h2>
+                <p>Non raccogliamo intenzionalmente informazioni da o commercializziamo verso bambini sotto i 18 anni.
+                    Utilizzando i nostri Servizi, confermi di avere almeno 18 anni o di essere il genitore o tutore
+                    legale di un minore che utilizza i nostri Servizi. Se scopriamo di avere informazioni da utenti
+                    sotto i 18 anni, chiuderemo i loro account e prenderemo provvedimenti per rimuovere rapidamente i
+                    loro dati dai nostri archivi. Se sei a conoscenza di qualsiasi dato che potremmo avere da bambini
+                    sotto i 18 anni, ti preghiamo di contattarci a infobemymood@gmail.com.</p>
+                <h2>I TUOI DIRITTI SULLA PRIVACY SPIEGATI</h2>
+                <p>In regioni come l'EEA, il Regno Unito, la Svizzera e il Canada, hai diritti ai sensi delle leggi
+                    sulla protezione dei dati. Questi diritti possono includere:</p>
+                <ul>
+                    <li>Accedere e ottenere una copia delle tue informazioni personali.</li>
+                    <li>Richiedere la correzione o l'eliminazione delle tue informazioni.</li>
+                    <li>Limitare il modo in cui elaboriamo le tue informazioni.</li>
+                    <li>Il diritto di trasferire i tuoi dati, se applicabile.</li>
+                    <li>Non essere soggetto a decisioni prese esclusivamente su base automatizzata.</li>
+                    <li>In alcuni casi, opporsi al modo in cui usiamo le tue informazioni.</li>
+                </ul>
+                <p>Per esercitare questi diritti, contattaci come dettagliato nella sezione "CONTATTARCI RIGUARDO QUESTO
+                    AVVISO".</p>
+                <p>Residenti nell'EEA o nel Regno Unito: Se pensi che stiamo elaborando le tue informazioni
+                    illegalmente, puoi presentare un reclamo alla tua autorit&amp;agrave; locale per la protezione dei
+                    dati.</p>
+                <p>Residenti Svizzeri: Puoi contattare il Commissario Federale per la Protezione dei Dati e per
+                    l'Informazione.</p>
+                <p>Revoca del Consenso: Puoi revocare il tuo consenso all'uso delle tue informazioni in qualsiasi
+                    momento, anche se ci&amp;ograve; non influenzer&amp;agrave; l'elaborazione passata. Contattaci come
+                    descritto sopra per revocare il consenso o aggiornare le tue preferenze.</p>
+                <p>Esclusione dal Marketing: Disiscriviti dai messaggi di marketing in qualsiasi momento rispondendo
+                    "STOP" o "DISISCRIVITI" agli SMS, o contattaci come descritto sopra. Potremmo comunque inviarti
+                    messaggi relativi ai servizi.</p>
+                <p>Informazioni Account: - Per rivedere o modificare le informazioni del tuo account, contattaci o
+                    accedi alle impostazioni del tuo account.</p>
+                <p>- Se desideri chiudere il tuo account, contattaci. Disattiveremo o cancelleremo il tuo account ma
+                    potremmo conservare alcune informazioni per prevenire frodi, risolvere problemi, far rispettare i
+                    nostri termini o conformarci ai requisiti legali.</p>
+                <p>Cookie e Tecnologie Simili: - Puoi impostare il tuo browser per rifiutare o rimuovere i cookie.
+                    Ci&amp;ograve; potrebbe influenzare le funzionalit&amp;agrave; dei nostri Servizi. Per maggiori
+                    informazioni, vedi la nostra Notifica sui Cookie: <a
+                        href="https://www.bemymood.com/negozio-online/cookie"
+                        target="_blank">https://www.bemymood.com/negozio-online/cookie</a>.</p>
+                <p>Per qualsiasi domanda o commento sui tuoi diritti sulla privacy, inviaci un'email a
+                    infobemymood@gmail.com.</p>
+                <h2>POLITICA SULLA FUNZIONE "NON SEGUIRE"</h2>
+                <p>La maggior parte dei browser web e alcuni sistemi operativi mobili e app hanno una funzione "Non
+                    Seguire" ("DNT") che ti consente di indicare la tua preferenza di non essere tracciato online.
+                    Attualmente, non esiste una tecnologia standard per riconoscere ed eseguire i segnali DNT, quindi
+                    non rispondiamo ai segnali del browser DNT o a qualsiasi meccanismo simile. Se in futuro
+                    verr&amp;agrave; stabilito uno standard per il tracciamento online, aggiorneremo di conseguenza la
+                    nostra notifica sulla privacy.</p>
+                <h2>DIRITTI SULLA PRIVACY PER I RESIDENTI NEGLI STATI UNITI</h2>
+                <p>Categorie di Informazioni Personali Raccolte negli Ultimi 12 Mesi:</p>
+                <ul>
+                    <li>A. Identificativi: Come nome, dettagli di contatto, indirizzo IP, email e nome account.</li>
+                    <li>B. Caratteristiche di Classificazione Protette: Genere e data di nascita.</li>
+                    <li>C. Informazioni Commerciali: Dettagli di transazioni e pagamenti.</li>
+                    <li>D. Informazioni Biometriche: Non raccogliamo impronte digitali o impronte vocali.</li>
+                    <li>E. Attivit&amp;agrave; Internet: Non raccogliamo cronologia di navigazione o comportamento
+                        online.</li>
+                    <li>F. Dati di Geolocalizzazione: Non raccogliamo posizioni dei dispositivi.</li>
+                    <li>G. Informazioni Audio/Visive: Non raccogliamo immagini, registrazioni audio o video.</li>
+                    <li>H. Informazioni Professionali: Non raccogliamo informazioni relative all'impiego.</li>
+                    <li>I. Informazioni Educative: Non raccogliamo registri degli studenti.</li>
+                    <li>J. Inferenze: Non raccogliamo inferenze dalle informazioni raccolte.</li>
+                    <li>K. Informazioni Personali Sensibili: Non raccogliamo informazioni personali sensibili.</li>
+                </ul>
+                <p>Utilizzo e Condivisione delle Informazioni Personali:</p>
+                <ul>
+                    <li>Come utilizziamo le tue informazioni &amp;egrave; dettagliato in "METODI DI ELABORAZIONE DELLE
+                        INFORMAZIONI"</li>
+                    <li>Condividiamo le tue informazioni personali con fornitori di servizi sotto un contratto scritto.
+                    </li>
+                    <li>Le tue informazioni personali sono utilizzate per i nostri scopi commerciali, come la ricerca
+                        interna. Questo non &amp;egrave; considerato "vendere" le tue informazioni.</li>
+                    <li>Non abbiamo divulgato, venduto o condiviso alcuna informazione personale con terze parti per
+                        scopi commerciali o di business negli ultimi 12 mesi. Non prevediamo di vendere o condividere
+                        informazioni personali di visitatori del sito web, utenti e consumatori in futuro.</li>
+                </ul>
+                <h2>DIRITTI SPECIFICI SULLA PRIVACY IN ALTRE REGIONI</h2>
+                <p>Australia e Nuova Zelanda:</p>
+                <ul>
+                    <li>Rispettiamo l'Privacy Act 1988 dell'Australia e l'Privacy Act 2020 della Nuova Zelanda.</li>
+                    <li>Questo avviso spiega quali informazioni personali raccogliamo, da dove, per quali scopi e chi
+                        altro potrebbe riceverle.</li>
+                    <li>Se scegli di non fornire le informazioni personali necessarie, potrebbe influenzare la nostra
+                        capacit&amp;agrave; di offrirti servizi, rispondere a richieste, gestire il tuo account o
+                        confermare la tua identit&amp;agrave;.</li>
+                    <li>Puoi richiedere l'accesso o la correzione delle tue informazioni personali contattandoci come
+                        menzionato nella sezione "REVISIONE, AGGIORNAMENTO O CANCELLAZIONE DEI TUOI DATI".</li>
+                    <li>Se ritieni che stiamo elaborando le tue informazioni illegalmente, puoi presentare un reclamo al
+                        Commissario Australiano per le Informazioni o al Commissario per la Privacy della Nuova Zelanda.
+                    </li>
+                </ul>
+                <h2>AGGIORNAMENTI A QUESTO AVVISO</h2>
+                <p>Potremmo modificare questo avviso sulla privacy secondo necessit&amp;agrave;. La nuova versione
+                    sar&amp;agrave; efficace non appena sar&amp;agrave; accessibile, segnata da una data di "Revisione"
+                    aggiornata. Raccomandiamo di rivedere frequentemente questo avviso per rimanere informati su come
+                    proteggiamo le tue informazioni.</p>
+                <h2>CONTATTARCI RIGUARDO QUESTO AVVISO</h2>
+                <p>Se hai domande o commenti su questo avviso, puoi contattare il nostro Data Protection Officer (DPO),
+                    , tramite email a infobemymood@gmail.com. In alternativa, puoi contattarci per posta all'indirizzo
+                    seguente:</p>
+                <p>PN 6742 NET di Francesco Bertini</p>
+                <p>PN 6742 NET di Francesco Bertini
+                    via Cecchi 14
+                    59100 Prato (PO)</p>
+                <p>Per i residenti nell'Area Economica Europea o in Svizzera, siamo il "responsabile del trattamento"
+                    delle tue informazioni personali. Il nostro rappresentante designato nell'EEA e in Svizzera
+                    &amp;egrave; . Puoi contattarli riguardo all'elaborazione delle nostre informazioni tramite email a
+                    infobemymood@gmail.com o per posta a:</p>
+                <p>PN 6742 NET di Francesco Bertini</p>
+                <p>PN 6742 NET di Francesco Bertini
+                    via Cecchi 14
+                    59100 Prato (PO)</p>
+                <h2>REVISIONE, AGGIORNAMENTO O CANCELLAZIONE DEI TUOI DATI</h2>
+                <p>A seconda delle leggi del tuo paese, potresti avere il diritto di accedere, modificare o cancellare
+                    le informazioni personali che deteniamo su di te. Per rivedere, aggiornare o cancellare le tue
+                    informazioni personali, visita <a href="https://www.bemymood.com/utente/login"
+                        target="_blank">https://www.bemymood.com/negozio-online/login</a>.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Terms and conditions content -->
+    <section id="terms-and-condition-content" class="mfp-hide popup-section">
+        <div class="content-wrapper">
+            <div class="popup-content-wrap">
+                <h2>Termini e condizioni </h2>
+                <a name="conditions"></a>
+                <strong>Spedizione</strong><br>
+                <div>Se effettui l'ordine prima delle 13, noi ci impegniamo a spedire la merce entro lo stesso giorno
+                    lavorativo, utilizzando corrieri espressi affidabili come FedEx, TNT, DHL o equivalenti. In difetto
+                    spediamo l'articolo il giorno lavorativo successivo. <br>La consegna standard avviene generalmente
+                    entro 24 ore nelle località principali, ad eccezione della domenica. Per le località più remote, i
+                    tempi di consegna possono estendersi fino a 48 ore, e la consegna nei fine settimana non è
+                    garantita. Noi ci assumiamo la piena responsabilità per la merce spedita fino al momento della
+                    consegna.<br><br></div>
+                <strong>Informazioni Tecniche</strong><br>Le informazioni tecniche fornite sul nostro sito possono
+                essere basate su quelle pubblicate dai produttori degli articoli presenti nel nostro catalogo. Noi ci
+                riserviamo il diritto di modificare o adattare le informazioni tecniche dei prodotti, senza
+                preavviso.<br><br><strong>Disponibilità Prodotti</strong><br>Noi ci riserviamo il diritto di accettare o
+                rifiutare gli ordini in base alla disponibilità dei prodotti. Se un articolo non è disponibile al
+                momento dell'ordine, tu verrai avvisato via e-mail entro 24 ore lavorative. Se un articolo non è più
+                disponibile, tu riceverai un rimborso completo per l'articolo non
+                disponibile.<br><br><strong>Prezzi</strong><br>I prezzi dei prodotti sono IVA inclusa e possono essere
+                soggetti a cambiamenti senza preavviso, ad eccezione degli ordini già
+                effettuati.<br><br><strong>Pagamenti</strong><br>I pagamenti per gli articoli ordinati devono essere
+                effettuati utilizzando uno dei seguenti metodi: bonifico bancario, Carta di Credito, PayPal o
+                contrassegno. I pagamenti devono essere effettuati entro tre giorni lavorativi
+                dall'ordine.<br><br><strong>Recesso</strong><br>Gli articoli ordinati verranno spediti con il metodo di
+                spedizione prescelto.<br>Qualsiasi reclamo per danneggiamento della merce deve essere comunicato
+                immediatamente al momento del ricevimento della merce stessa, <span
+                    style="text-decoration: underline;">firmando la ricevuta con riserva</span> indicando il tipo di
+                danneggiamento.<br>Tu sei tutelato dalla legislazione italiana in merito al <a
+                    href="https://www.bemymood.com/negozio-online/shipping">Diritto di Recesso (D.L. 15/01/92
+                    n°50)</a>.<br><br><strong>Informativa sulla Privacy</strong><br>Tu sei tutelato dalla legislazione
+                italiana in merito alla <a href="https://www.bemymood.com/negozio-online/privacy">Informativa sulla
+                    Privacy (D.lgs. 196/2003)</a>.<p></p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Cookie Policy content -->
+    <section id="cookie-policy-content" class="mfp-hide popup-section">
+        <div class="content-wrapper">
+            <div class="popup-content-wrap">
+                <h2>What is Cookie Policy? </h2>
+                <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the
+                    industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type
+                    and scrambled it to make a type specimen book. It has survived not only five centuries, but also the
+                    leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s
+                    with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop
+                    publishing software like Aldus PageMaker including versions of Lorem Ipsum.</p>
+                <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the
+                    industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type
+                    and scrambled it to make a type specimen book. It has survived not only five centuries, but also the
+                    leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s
+                    with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop
+                    publishing software like Aldus PageMaker including versions of Lorem Ipsum.</p>
+                <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the
+                    industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type
+                    and scrambled it to make a type specimen book. It has survived not only five centuries, but also the
+                    leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s
+                    with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop
+                    publishing software like Aldus PageMaker including versions of Lorem Ipsum.</p>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <div class="content-wrapper">
+            <div class="two-col">
+                <div class="left-col">
+                    <ul>
+                        <li>
+                            <a href="#privacy-policy-content" class="open-privacy-policy">Privacy Policy</a>
+                        </li>
+                        <li>
+                            <a href="#terms-and-condition-content" class="open-terms-and-conditions">Termini e
+                                condizioni</a>
+                        </li>
+                        <li>
+                            <a href="#cookie-policy-content" class="open-cookie-policies">Cookie Policy</a>
+                        </li>
+                    </ul>
+                </div>
+                <div class="right-col">
+                    <p>
+                        PN 6742 Net di Francesco Bertini
+                        Via fucini 10, Montale (PT) Italia
+                        P.IVA IT01951450475
+                    </p>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+
+    </script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/magnific-popup.js/1.1.0/jquery.magnific-popup.min.js"
+        integrity="sha512-IsNh5E3eYy3tr/JiX2Yx4vsCujtkhwl7SLqgnwLNgf04Hrt9BT9SXlLlZlWx+OK4ndzAoALhsMNcCmkggjZB1w=="
+        crossorigin="anonymous" referrerpolicy="no-referrer">
+    </script>
+    <script defer>
+        // Input label transition on focus
+        $(document).ready(function () {
+            $('.text-input').on('input focus', function (e) {
+                let value = e.target.value;
+                let label = $(e.target).siblings('label');
+                if (value || value.trim() !== '') {
+                    label.addClass('filled');
+                } else {
+                    label.removeClass('filled');
+                }
+            });
+
+            // Email Validation
+            $("#email").keypress(() => {
+                let form = document.getElementById('pillowCheckoutForm')
+                let email = document.getElementById('email').value
+                let text = document.getElementById('emailValidationText')
+                let pattern = /^[^ ]+@[^ ]+\.[a-z]{2,3}$/
+
+                if (email.match(pattern)) {
+                    form.classList.add('valid')
+                    form.classList.remove('invalid')
+                    text.innerHTML = "Your Email Address in valid"
+                    text.classList.add('show_text')
+                    text.style.color = '#03c305'
+                } else {
+                    form.classList.remove('valid')
+                    form.classList.add('invalid')
+                    text.innerHTML = "Please Enter Valid Email Address"
+                    text.classList.add('show_text')
+                    text.style.color = '#ff0000'
+                }
+
+                if (email == '') {
+                    form.classList.remove('valid')
+                    form.classList.remove('invalid')
+                    text.innerHTML = ""
+                    text.style.color = '#03c305'
+                }
+            });
+
+            // Magnific popup 
+            $('.open-privacy-policy, .open-terms-and-conditions, .open-cookie-policies').magnificPopup({
+                type: 'inline',
+                closeBtnInside: true, // Custom settings, never mind
+                midClick: true // Allow opening popup on middle mouse click. Always set it to true if you don't provide alternative source in href.
+            });
+        });
+
+        // Show Pillow Type and quantities
+        $(document).ready(function () {
+
+            let quantity, totalAmount, discountPercent, mrpPerPillow;
+            let pillowType = "Cuscino_Memory"
+
+            // Show/hide based on the default selected pillowType
+            updateRadioVisibility();
+
+            // Handle pillowType change
+            $('input[name="pillowType"]').change(function () {
+                updateRadioVisibility();
+            });
+
+            // Handle quantityMemory change
+            $('input[name="quantityMemory"]').change(function () {
+                mrpPerPillow = $(this).val();
+                let featuredImg = this.parentElement.querySelector('.image_col');
+                let imageSrc;
+                // Check if imageCol exists
+                if (featuredImg) {
+                    // Access the image element within .image_col and get its src attribute
+                    imageSrc = featuredImg.querySelector('img').src;
+                } else {
+                    console.log("image not found.");
+                }
+                quantity = $(this).data('quantity');
+                pillowType = $(this).data('pillow');
+                discountPercent = $(this).data('discount')
+                $(`.cuscinoMemoryBio_quantity input[data-quantity="${quantity}"]`).prop('checked', true)
+                // $(`input[data-quantity="${quantity}"]`).parent(".quantity_checkboxes").find(".bottom_wrap").show()
+                orderDetails(mrpPerPillow, pillowType, quantity, discountPercent, imageSrc);
+            });
+
+            // Handle quantityMemoryBio change
+            $('input[name="quantityMemoryBio"]').change(function () {
+                mrpPerPillow = $(this).val();
+                // $(this).val();
+                quantity = $(this).data('quantity');
+                pillowType = $(this).data('pillow');
+                discountPercent = $(this).data('discount')
+                // $(`.cuscinoMemory_quantity .quantity_checkboxes`).hide() 
+                // $(`.cuscinoMemory_quantity input[data-quantity="${quantity}"]`).parent(".quantity_checkboxes").show() 
+                $(`.cuscinoMemory_quantity input[data-quantity="${quantity}"]`).prop('checked', true)
+                // $(`.cuscinoMemory_quantity input[data-quantity="${quantity}"]`).parent(".quantity_checkboxes").find(".bottom_wrap").show() 
+                let featuredImg = this.parentElement.querySelector('.image_col');
+                let imageSrc;
+                // Check if imageCol exists
+                if (featuredImg) {
+                    // Access the image element within .image_col and get its src attribute
+                    imageSrc = featuredImg.querySelector('img').src;
+                } else {
+                    console.log("image not found.");
+                }
+
+                orderDetails(mrpPerPillow, pillowType, quantity, discountPercent, imageSrc);
+            });
+
+            $('input[name="quantityMemory"]').each(function () {
+                $(this).change();
+            });
+            $('input[name="quantityMemoryBio"]').each(function () {
+                $(this).change();
+            });
+
+            // Function to update radio visibility based on the selected pillowType
+            function updateRadioVisibility() {
+                let selectedPillowType = $('input[name="pillowType"]:checked').val();
+                $('.cuscinoMemory_quantity, .cuscinoMemoryBio_quantity').hide();
+
+                if (selectedPillowType === 'Cuscino_Memory') {
+                    $('.cuscinoMemory_quantity').show();
+                } else if (selectedPillowType === 'Cuscino_Memory_Bio') {
+                    $('.cuscinoMemoryBio_quantity').show();
+                }
+
+                // Trigger change event for the selected quantity
+                $('input[name="' + (selectedPillowType === 'Cuscino_Memory' ? 'quantityMemory' :
+                    'quantityMemoryBio') + '"]:checked').change();
+            }
+
+            // Trigger change event for the selected quantity on page load
+            let defaultQuantityRadio = $('input[name="pillowType"]:checked').val() === 'Cuscino_Memory' ?
+                'quantityMemory' : 'quantityMemoryBio';
+            $('input[name="' + defaultQuantityRadio + '"]:checked').change();
+
+
+            function setupQuantityCheckboxHandlers(containerSelector, relatedContainerSelector) {
+                $(containerSelector + " .quantity_checkboxes").each(function () {
+                    let $clickedCheckbox = $(this);
+                    $clickedCheckbox.click(function () {
+                        $(".order_details_conta").show();
+                        let quantity = $clickedCheckbox.find("input[data-quantity]").attr(
+                            "data-quantity");
+
+                        // Save the selected quantity to local storage
+                        localStorage.setItem('selectedQuantity', quantity);
+                        localStorage.setItem('selectedContainer', containerSelector);
+
+                        // Show corresponding checkboxes and bottom wrap in the related container
+                        let $relatedCheckboxes = $(relatedContainerSelector +
+                            " .quantity_checkboxes").has(
+                            `input[data-quantity="${quantity}"]`);
+                        $relatedCheckboxes.find(".bottom_wrap").show();
+                        $(relatedContainerSelector + " .quantity_checkboxes").hide();
+                        $relatedCheckboxes.show();
+
+                        // Hide all other checkboxes in the same container
+                        $(containerSelector + " .quantity_checkboxes").not($clickedCheckbox)
+                            .hide();
+
+                        $(".show-more-button").show();
+                    });
+                });
+            }
+
+            // Restore checkbox state when the page loads
+            $(document).ready(function () {
+                let selectedQuantity = localStorage.getItem('selectedQuantity');
+                let selectedContainer = localStorage.getItem('selectedContainer');
+
+                if (selectedQuantity && selectedContainer) {
+                    let $checkboxes = $(selectedContainer + " .quantity_checkboxes").has(
+                        `input[data-quantity="${selectedQuantity}"]`);
+                    $checkboxes.find(`input[data-quantity="${selectedQuantity}"]`).prop('checked', true)
+                        .change(); // Directly check the radio button and trigger change event
+                    $checkboxes.click();
+                    // Additional actions based on the restored state
+                    $(selectedContainer + " .quantity_checkboxes").not($checkboxes).hide();
+                    $(selectedContainer + " .order_details_conta").show();
+                    $checkboxes.find(".bottom_wrap").show();
+                    $(".show-more-button").show();
+                }
+            });
+
+            // Setup event handlers for each set of quantity checkboxes
+            setupQuantityCheckboxHandlers(".cuscinoMemory_quantity", ".cuscinoMemoryBio_quantity");
+            setupQuantityCheckboxHandlers(".cuscinoMemoryBio_quantity", ".cuscinoMemory_quantity");
+
+            $(".show-more-button").click(function (e) {
+                e.preventDefault();
+                $(".quantity_checkboxes").show();
+                $(".bottom_wrap").hide();
+                $(this).hide();
+            })
+        });
+
+        // Function to update total amount based on the selected quantity
+        function orderDetails(mrpPerPillow, pillowType, quantity, discountPercent, imageSrc) {
+            let discount = Math.round((mrpPerPillow * quantity * discountPercent) / 100);
+            let priceAfterDiscount = (mrpPerPillow * quantity) - discount;
+
+            $(".selected_pillow_img").html(`<img src="${imageSrc}" alt="Pillow" width="80">`);
+
+            $('.total_breakdown ').html(
+                `<div class="generated-details">
+                    <div class="pricing_breakdown">                        
+                        <div class="left-col"> <span class="articleName"><strong>${quantity}</strong> ${pillowType}</span> da ${mrpPerPillow},00 €</div> <div class="right-col fw700">  ${mrpPerPillow * quantity },00 €</div>  
+                    </div>
+                    <div class="pricing_breakdown">
+                        <div class="left-col">Sconto Meta -${discountPercent}% </div> <div class="right-col fw700"> - ${discount},00 €</div> 
+                    </div>
+                    <div class="pricing_breakdown">
+                        <div class="left-col">Spedizione e contrassegno </div>  <div class="right-col fw700"> 0,00 €</div>
+                    </div>
+                    <div class=" hide" id="dynamicCoupon">
+                      <div class="pricing_breakdown hide" >
+                        <div class="left-col">Coupon (scade in <span id="mins"></span>min <span id="secs"></span>sec) </div> <div class="right-col fw700">-<span id="couponDiscount"> </span>,00 €</div> 
+                      </div>
+                        </div>
+                    <div class="pricing_breakdown totalAmt">
+                        <div class="left-col "> Totale: </div> <div class="right-col" data-total="${priceAfterDiscount}"> <span id="updatedTotal">${priceAfterDiscount}</span>,00 €</div>
+                    </div>
+                    </div>`
+            );
+
+        }
+
+        // Function to start or resume the timer
+        function startOrResumeTimer(duration, startTime) {
+            let timer = duration;
+            let intervalId = setInterval(function () {
+                let now = Date.now();
+                let elapsedTime = Math.floor((now - startTime) / 1000);
+                timer = duration - elapsedTime;
+                let minutesConta = document.getElementById("minutes");
+                let secondsConta = document.getElementById("seconds");
+                let minsForCoupon = document.getElementById("mins");
+                let secsForCoupon = document.getElementById("secs");
+                let couponDiscount = document.getElementById("couponDiscount");
+                let amountBeforeCoupon = $(".totalAmt .right-col").data("total");
+                if (timer <= 0) {
+                    clearInterval(intervalId); // Clear interval when timer reaches 0
+                    // display.textContent = "00:00";
+                    minutesConta.textContent = 0;
+                    secondsConta.textContent = 0;
+                    minsForCoupon.textContent = 0;
+                    secsForCoupon.textContent = 0;
+                    couponDiscount.textContent = 0;
+                    $(".extra-coupon-conta").hide();
+                    $("#dynamicCoupon").hide();
+                    $("#updatedTotal").text(amountBeforeCoupon);
+                    // localStorage.removeItem("startTime");
+                    // localStorage.removeItem("userIP");
+                    return;
+                } else {
+                    $(".extra-coupon-conta").show();
+
+                    $("#updatedTotal").text(amountBeforeCoupon - 10);
+                    $("#dynamicCoupon").show();
+
+                    minutes = Math.floor(timer / 60);
+                    seconds = timer % 60;
+
+                    let minutesStr = minutes < 10 ? "0" + minutes : minutes;
+                    let secondsStr = seconds < 10 ? "0" + seconds : seconds;
+
+                    minutesConta.textContent = minutesStr;
+                    secondsConta.textContent = secondsStr;
+                    minsForCoupon.textContent = minutesStr;
+                    secsForCoupon.textContent = secondsStr;
+                    couponDiscount.textContent = 10;
+                }
+
+
+            }, 1000);
+
+            return intervalId; // Return interval ID
+        }
+
+        // Function to check if timer has already started for this user
+        function hasTimerStarted() {
+            let userIP = localStorage.getItem("userIP");
+            return userIP !== null;
+        }
+
+        // Function to set the user IP and start time in localStorage
+        function setUserIPAndStartTime() {
+            let userIP = localStorage.setItem("userIP", "timerStarted");
+            let startTime = Date.now();
+            localStorage.setItem("startTime", startTime);
+        }
+
+        // Add event listener to radio buttons
+        let radioButtons = document.querySelectorAll('.quantity_checkboxes');
+        let currentIntervalId; // Variable to hold the current interval ID
+        radioButtons.forEach(function (radioButton) {
+            radioButton.addEventListener('click', function () {
+                $(this).find(".bottom_wrap").show();
+                if (!hasTimerStarted()) {
+                    setUserIPAndStartTime();
+                    let minutes = 15 * 60; // 15 minutes 
+                    if (currentIntervalId) {
+                        clearInterval(currentIntervalId); // Clear previous interval if exists
+                    }
+                    currentIntervalId = startOrResumeTimer(minutes, Date
+                .now()); // Start new timer and store interval ID
+                } else {
+                    if (localStorage.getItem("startTime") !== null) {
+                        let storedStartTime = parseInt(localStorage.getItem("startTime"));
+                        if (!isNaN(storedStartTime)) {
+                            let currentTime = Date.now();
+                            let elapsed = Math.floor((currentTime - storedStartTime) / 1000);
+                            let remainingSeconds = 15 * 60 - elapsed;
+
+                            if (remainingSeconds <= 0) {
+                                // Timer expired, do not start a new one
+                                console.log("Timer already expired for this user.");
+                                $("#dynamicCoupon").hide();
+                            } else {
+                                // Resume the timer
+                                if (currentIntervalId) {
+                                    clearInterval(currentIntervalId); // Clear previous interval if exists
+                                }
+                                currentIntervalId = startOrResumeTimer(remainingSeconds,
+                                    storedStartTime);
+                            }
+                        } else {
+                            console.error("Invalid stored start time:", storedStartTime);
+                        }
+                    }
+                }
+            });
+        });
+    </script>
+
+</body>
+
+</html>

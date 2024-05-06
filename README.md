@@ -1,1 +1,1 @@
-# pillow-checkout-v3
+# checkout-test

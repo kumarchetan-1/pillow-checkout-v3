@@ -2160,183 +2160,138 @@
             });
         });
 
-        // Show Pillow Type and quantities
+  
         $(document).ready(function () {
+       let mrpPerPillow, quantity, pillowType, discountPercent, imageSrc;
+        // Check if any input was clicked (stored in local storage)
+        var wasClicked = localStorage.getItem('inputClicked');
+        let radioButtons = document.querySelectorAll('.quantity_checkboxes');
+       let showMoreBtnState = localStorage.getItem("showMoreBtnClicked")
+     // Function to update visibility and restore quantity based on the selected pillowType
+     function updateRadioVisibility() {
+        let selectedPillowType = $('input[name="pillowType"]:checked').val();
+        $('.cuscinoMemory_quantity, .cuscinoMemoryBio_quantity').hide();
 
-            let quantity, totalAmount, discountPercent, mrpPerPillow;
-            let pillowType = "Cuscino_Memory"
+        if (selectedPillowType === 'Cuscino_Memory') {
+            $('.cuscinoMemory_quantity').show();
+        } else if (selectedPillowType === 'Cuscino_Memory_Bio') {
+            $('.cuscinoMemoryBio_quantity').show();
+        }
 
-            // Show/hide based on the default selected pillowType
+        // Show More btn State 
+        if(showMoreBtnState){
+            $(".quantity_checkboxes").show()
+            console.log("show More btn State")
+        }
+        localStorage.setItem("selectedPillowType", selectedPillowType);
+        restoreQuantitySelection();
+     }
+
+    // Restore quantity selection from localStorage
+    function restoreQuantitySelection() {
+        let pillowType = localStorage.getItem("selectedPillowType") || 'Cuscino_Memory';
+        let quantityRadio = pillowType === 'Cuscino_Memory' ? 'quantityMemory' : 'quantityMemoryBio';
+        let selectedQuantity = localStorage.getItem('selectedQuantity');
+        console.log(selectedQuantity)
+        if (selectedQuantity && wasClicked) {
+            let selector = `input[name="${quantityRadio}"][data-quantity="${selectedQuantity}"]`;
+            $(selector).prop('checked', true);
+        } else {
+            $(`input[name="${quantityRadio}"]:last`).change().prop('checked', false);
+        }
+        
+        $(`input[name="${quantityRadio}"]:checked`).change();
+    }
+
+    // Listen for changes in quantity selection and update order details accordingly
+    $('input[name="quantityMemory"], input[name="quantityMemoryBio"]').change(function () {
+        mrpPerPillow = $(this).val();
+        quantity = $(this).data('quantity');
+        pillowType = $(this).data('pillow');
+        discountPercent = $(this).data('discount');
+        imageSrc = $(this).closest('.quantity_checkboxes').find('img').attr('src') || '';
+        localStorage.setItem('selectedQuantity', quantity);
+        orderDetails(mrpPerPillow, pillowType, quantity, discountPercent, imageSrc);
+        showBottomWrap(this);
+      if(wasClicked){
+        $(this).closest('.quantity_checkboxes').siblings().hide();
+        $(".show-more-button").show()
+        console.log("quantity changed")
+         // Show more btn state 
+        showMoreBtnState = false
+        localStorage.setItem("showMoreBtnClicked", false)
+     }
+    
+        console.log("Qnty Clicked State" + wasClicked)
+
+    });
+
+
+    // Function to update and display order details
+    function orderDetails(mrpPerPillow, pillowType, quantity, discountPercent, imageSrc) {
+        let discount = Math.round((mrpPerPillow * quantity * discountPercent) / 100);
+        let priceAfterDiscount = mrpPerPillow * quantity - discount;
+        $(".selected_pillow_img").html(`<img src="${imageSrc}" alt="Pillow" width="80">`);
+        $('.total_breakdown').html(`
+            <div class="generated-details">
+                <div class="pricing_breakdown">
+                    <div class="left-col"> <span class="articleName"><strong>${quantity}</strong> ${pillowType}</span> da ${mrpPerPillow},00 €</div>
+                    <div class="right-col fw700"> ${mrpPerPillow * quantity},00 €</div>
+                </div>
+                <div class="pricing_breakdown">
+                    <div class="left-col">Sconto Meta -${discountPercent}% </div>
+                    <div class="right-col fw700"> - ${discount},00 €</div>
+                </div>
+                <div class=" hide" id="dynamicCoupon">
+                    <div class="pricing_breakdown hide">
+                        <div class="left-col">Coupon (scade in <span id="mins"></span>min <span id="secs"></span>sec) </div>
+                        <div class="right-col fw700">-<span id="couponDiscount"> </span>,00 €</div>
+                    </div>
+                </div>
+                <div class="pricing_breakdown">
+                    <div class="left-col">Spedizione e contrassegno </div>
+                    <div class="right-col fw700"> 0,00 €</div>
+                </div>
+                <div class="pricing_breakdown totalAmt">
+                    <div class="left-col "> Totale: </div>
+                    <div class="right-col" data-total="${priceAfterDiscount}"> <span id="updatedTotal">${priceAfterDiscount}</span>,00 €</div>
+                </div>
+            </div>`);
+    }
+
+    // Function to show the bottom wrap for the selected quantity
+    function showBottomWrap(element) {
+        $('.bottom_wrap').hide();
+        if(wasClicked){
+        $(element).closest('.quantity_checkboxes').find('.bottom_wrap').show();
+        }
+    }
+
+    // Restore the initial state when the page loads
+    function restoreInitialState() {
+        if (localStorage.getItem('selectedPillowType')) {
+            let savedPillowType = localStorage.getItem('selectedPillowType');
+            $('input[name="pillowType"][value="' + savedPillowType + '"]').prop('checked', true);
             updateRadioVisibility();
+        } else {
+            $('input[name="pillowType"]:first').prop('checked', true).change();
+        }
+    }
 
-            // Handle pillowType change
-            $('input[name="pillowType"]').change(function () {
-                updateRadioVisibility();
-            });
+    // Attach event handlers
+    $('input[name="pillowType"]').change(updateRadioVisibility);
+    restoreInitialState();
 
-            // Handle quantityMemory change
-            $('input[name="quantityMemory"]').change(function () {
-                mrpPerPillow = $(this).val();
-                let featuredImg = this.parentElement.querySelector('.image_col');
-                let imageSrc;
-                // Check if imageCol exists
-                if (featuredImg) {
-                    // Access the image element within .image_col and get its src attribute
-                    imageSrc = featuredImg.querySelector('img').src;
-                } else {
-                    console.log("image not found.");
-                }
-                quantity = $(this).data('quantity');
-                pillowType = $(this).data('pillow');
-                discountPercent = $(this).data('discount')
-                $(`.cuscinoMemoryBio_quantity input[data-quantity="${quantity}"]`).prop('checked', true)
-                // $(`input[data-quantity="${quantity}"]`).parent(".quantity_checkboxes").find(".bottom_wrap").show()
-                orderDetails(mrpPerPillow, pillowType, quantity, discountPercent, imageSrc);
-            });
-
-            // Handle quantityMemoryBio change
-            $('input[name="quantityMemoryBio"]').change(function () {
-                mrpPerPillow = $(this).val();
-                // $(this).val();
-                quantity = $(this).data('quantity');
-                pillowType = $(this).data('pillow');
-                discountPercent = $(this).data('discount')
-                // $(`.cuscinoMemory_quantity .quantity_checkboxes`).hide() 
-                // $(`.cuscinoMemory_quantity input[data-quantity="${quantity}"]`).parent(".quantity_checkboxes").show() 
-                $(`.cuscinoMemory_quantity input[data-quantity="${quantity}"]`).prop('checked', true)
-                // $(`.cuscinoMemory_quantity input[data-quantity="${quantity}"]`).parent(".quantity_checkboxes").find(".bottom_wrap").show() 
-                let featuredImg = this.parentElement.querySelector('.image_col');
-                let imageSrc;
-                // Check if imageCol exists
-                if (featuredImg) {
-                    // Access the image element within .image_col and get its src attribute
-                    imageSrc = featuredImg.querySelector('img').src;
-                } else {
-                    console.log("image not found.");
-                }
-
-                orderDetails(mrpPerPillow, pillowType, quantity, discountPercent, imageSrc);
-            });
-
-            $('input[name="quantityMemory"]').each(function () {
-                $(this).change();
-            });
-            $('input[name="quantityMemoryBio"]').each(function () {
-                $(this).change();
-            });
-
-            // Function to update radio visibility based on the selected pillowType
-            function updateRadioVisibility() {
-                let selectedPillowType = $('input[name="pillowType"]:checked').val();
-                $('.cuscinoMemory_quantity, .cuscinoMemoryBio_quantity').hide();
-
-                if (selectedPillowType === 'Cuscino_Memory') {
-                    $('.cuscinoMemory_quantity').show();
-                } else if (selectedPillowType === 'Cuscino_Memory_Bio') {
-                    $('.cuscinoMemoryBio_quantity').show();
-                }
-
-                // Trigger change event for the selected quantity
-                $('input[name="' + (selectedPillowType === 'Cuscino_Memory' ? 'quantityMemory' :
-                    'quantityMemoryBio') + '"]:checked').change();
-            }
-
-            // Trigger change event for the selected quantity on page load
-            let defaultQuantityRadio = $('input[name="pillowType"]:checked').val() === 'Cuscino_Memory' ?
-                'quantityMemory' : 'quantityMemoryBio';
-            $('input[name="' + defaultQuantityRadio + '"]:checked').change();
-
-
-            function setupQuantityCheckboxHandlers(containerSelector, relatedContainerSelector) {
-                $(containerSelector + " .quantity_checkboxes").each(function () {
-                    let $clickedCheckbox = $(this);
-                    $clickedCheckbox.click(function () {
-                        $(".order_details_conta").show();
-                        let quantity = $clickedCheckbox.find("input[data-quantity]").attr(
-                            "data-quantity");
-
-                        // Save the selected quantity to local storage
-                        localStorage.setItem('selectedQuantity', quantity);
-                        localStorage.setItem('selectedContainer', containerSelector);
-
-                        // Show corresponding checkboxes and bottom wrap in the related container
-                        let $relatedCheckboxes = $(relatedContainerSelector +
-                            " .quantity_checkboxes").has(
-                            `input[data-quantity="${quantity}"]`);
-                        $relatedCheckboxes.find(".bottom_wrap").show();
-                        $(relatedContainerSelector + " .quantity_checkboxes").hide();
-                        $relatedCheckboxes.show();
-
-                        // Hide all other checkboxes in the same container
-                        $(containerSelector + " .quantity_checkboxes").not($clickedCheckbox)
-                            .hide();
-
-                        $(".show-more-button").show();
-                    });
-                });
-            }
-
-            // Restore checkbox state when the page loads
-            $(document).ready(function () {
-                let selectedQuantity = localStorage.getItem('selectedQuantity');
-                let selectedContainer = localStorage.getItem('selectedContainer');
-
-                if (selectedQuantity && selectedContainer) {
-                    let $checkboxes = $(selectedContainer + " .quantity_checkboxes").has(
-                        `input[data-quantity="${selectedQuantity}"]`);
-                    $checkboxes.find(`input[data-quantity="${selectedQuantity}"]`).prop('checked', true)
-                        .change(); // Directly check the radio button and trigger change event
-                    $checkboxes.click();
-                    // Additional actions based on the restored state
-                    $(selectedContainer + " .quantity_checkboxes").not($checkboxes).hide();
-                    $(selectedContainer + " .order_details_conta").show();
-                    $checkboxes.find(".bottom_wrap").show();
-                    $(".show-more-button").show();
-                }
-            });
-
-            // Setup event handlers for each set of quantity checkboxes
-            setupQuantityCheckboxHandlers(".cuscinoMemory_quantity", ".cuscinoMemoryBio_quantity");
-            setupQuantityCheckboxHandlers(".cuscinoMemoryBio_quantity", ".cuscinoMemory_quantity");
-
-            $(".show-more-button").click(function (e) {
+          $(".show-more-button").click(function (e) {
                 e.preventDefault();
                 $(".quantity_checkboxes").show();
                 $(".bottom_wrap").hide();
                 $(this).hide();
+                localStorage.setItem("showMoreBtnClicked", true)
+                showMoreBtnState = true;
             })
-        });
 
-        // Function to update total amount based on the selected quantity
-        function orderDetails(mrpPerPillow, pillowType, quantity, discountPercent, imageSrc) {
-            let discount = Math.round((mrpPerPillow * quantity * discountPercent) / 100);
-            let priceAfterDiscount = (mrpPerPillow * quantity) - discount;
 
-            $(".selected_pillow_img").html(`<img src="${imageSrc}" alt="Pillow" width="80">`);
-
-            $('.total_breakdown ').html(
-                `<div class="generated-details">
-                    <div class="pricing_breakdown">                        
-                        <div class="left-col"> <span class="articleName"><strong>${quantity}</strong> ${pillowType}</span> da ${mrpPerPillow},00 €</div> <div class="right-col fw700">  ${mrpPerPillow * quantity },00 €</div>  
-                    </div>
-                    <div class="pricing_breakdown">
-                        <div class="left-col">Sconto Meta -${discountPercent}% </div> <div class="right-col fw700"> - ${discount},00 €</div> 
-                    </div>
-                    <div class="pricing_breakdown">
-                        <div class="left-col">Spedizione e contrassegno </div>  <div class="right-col fw700"> 0,00 €</div>
-                    </div>
-                    <div class=" hide" id="dynamicCoupon">
-                      <div class="pricing_breakdown hide" >
-                        <div class="left-col">Coupon (scade in <span id="mins"></span>min <span id="secs"></span>sec) </div> <div class="right-col fw700">-<span id="couponDiscount"> </span>,00 €</div> 
-                      </div>
-                        </div>
-                    <div class="pricing_breakdown totalAmt">
-                        <div class="left-col "> Totale: </div> <div class="right-col" data-total="${priceAfterDiscount}"> <span id="updatedTotal">${priceAfterDiscount}</span>,00 €</div>
-                    </div>
-                    </div>`
-            );
-
-        }
 
         // Function to start or resume the timer
         function startOrResumeTimer(duration, startTime) {
@@ -2404,7 +2359,6 @@
         }
 
         // Add event listener to radio buttons
-        let radioButtons = document.querySelectorAll('.quantity_checkboxes');
         let currentIntervalId; // Variable to hold the current interval ID
         radioButtons.forEach(function (radioButton) {
             radioButton.addEventListener('click', function () {
@@ -2416,7 +2370,7 @@
                         clearInterval(currentIntervalId); // Clear previous interval if exists
                     }
                     currentIntervalId = startOrResumeTimer(minutes, Date
-                .now()); // Start new timer and store interval ID
+                        .now()); // Start new timer and store interval ID
                 } else {
                     if (localStorage.getItem("startTime") !== null) {
                         let storedStartTime = parseInt(localStorage.getItem("startTime"));
@@ -2432,7 +2386,8 @@
                             } else {
                                 // Resume the timer
                                 if (currentIntervalId) {
-                                    clearInterval(currentIntervalId); // Clear previous interval if exists
+                                    clearInterval(
+                                    currentIntervalId); // Clear previous interval if exists
                                 }
                                 currentIntervalId = startOrResumeTimer(remainingSeconds,
                                     storedStartTime);
@@ -2444,6 +2399,27 @@
                 }
             });
         });
+
+        // If no input was clicked, show all '.quantity_checkboxes'
+         if (!wasClicked) {
+        $('.quantity_checkboxes').show();
+        $(".bottom_wrap").hide()
+        $(".show-more-button").hide() 
+        console.log(wasClicked)
+        } else{
+            $('.quantity_checkboxes').click()
+        }
+
+        // Attach a click event listener to input elements inside '.quantity_checkboxes'
+        $('.quantity_checkboxes').click(function() {
+        localStorage.setItem('inputClicked', 'true');
+        wasClicked = true;
+        console.log("Qnty Checkbox Clicked");
+        console.log(wasClicked)
+        }); 
+
+    });
+
     </script>
 
 </body>

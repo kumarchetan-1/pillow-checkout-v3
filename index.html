@@ -2161,94 +2161,96 @@
         });
 
   
-        $(document).ready(function () {
-        let mrpPerPillow, quantity, pillowType, discountPercent, imageSrc;
-            let radioButtons = document.querySelectorAll('.quantity_checkboxes');
-            // Check if any input was clicked (stored in local storage)
-            var wasClicked = localStorage.getItem('inputClicked') === 'true';
-            let showMoreBtnState = localStorage.getItem("showMoreBtnClicked") === 'true';
+      
+    $(document).ready(function () {
+    let mrpPerPillow, quantity, pillowType, discountPercent, imageSrc;
+    let radioButtons = document.querySelectorAll('.quantity_checkboxes');
+    let wasClicked = localStorage.getItem('inputClicked') === 'true';
+    let showMoreBtnState = localStorage.getItem("showMoreBtnClicked") === 'true';
 
-            // Show more button
-            $(".show-more-button").click(function (e) {
-                e.preventDefault();
-                $(".quantity_checkboxes").show();
-                $(".bottom_wrap").hide();
-                $(this).hide();
-                showMoreBtnState = true;
-                localStorage.setItem("showMoreBtnClicked", true)
-                wasClicked = false;
-                localStorage.setItem('inputClicked', false);
-                // console.log("WasClicked: " + wasClicked)
-            })
+    // Show more button
+    $(".show-more-button").click(function (e) {
+        e.preventDefault();
+        $(".quantity_checkboxes").show();
+        $(".bottom_wrap").hide();
+        $(this).hide();
+        showMoreBtnState = true;
+        localStorage.setItem("showMoreBtnClicked", true);
+        wasClicked = false;
+        localStorage.setItem('inputClicked', false);
+    });
 
+    // Function to update visibility and restore quantity based on the selected pillowType
+    function updateRadioVisibility() {
+        let selectedPillowType = $('input[name="pillowType"]:checked').val();
+        $('.cuscinoMemory_quantity, .cuscinoMemoryBio_quantity').hide();
 
-            // Function to update visibility and restore quantity based on the selected pillowType
-            function updateRadioVisibility() {
-                let selectedPillowType = $('input[name="pillowType"]:checked').val();
-                $('.cuscinoMemory_quantity, .cuscinoMemoryBio_quantity').hide();
+        if (selectedPillowType === 'Cuscino_Memory') {
+            $('.cuscinoMemory_quantity').show();
+        } else if (selectedPillowType === 'Cuscino_Memory_Bio') {
+            $('.cuscinoMemoryBio_quantity').show();
+        }
+        localStorage.setItem("selectedPillowType", selectedPillowType);
+        restoreQuantitySelection();
+    }
 
-                if (selectedPillowType === 'Cuscino_Memory') {
-                    $('.cuscinoMemory_quantity').show();
-                } else if (selectedPillowType === 'Cuscino_Memory_Bio') {
-                    $('.cuscinoMemoryBio_quantity').show();
-                }
-                localStorage.setItem("selectedPillowType", selectedPillowType);
-                restoreQuantitySelection();
+    // Restore quantity selection from localStorage
+    function restoreQuantitySelection() {
+        let pillowType = localStorage.getItem("selectedPillowType") || 'Cuscino_Memory';
+        let quantityRadio = pillowType === 'Cuscino_Memory' ? 'quantityMemory' : 'quantityMemoryBio';
+        let selectedQuantity = localStorage.getItem('selectedQuantity');
+        if (selectedQuantity) {
+            let selector = `input[name="${quantityRadio}"][data-quantity="${selectedQuantity}"]`;
+            $(selector).prop('checked', true);
+        } else {
+            $(`input[name="${quantityRadio}"]:last`).change().prop('checked', false);
+        }
+        $(`input[name="${quantityRadio}"]:checked`).change();
+    }
 
-            }
+    // Attach a click event listener to input elements inside '.quantity_checkboxes'
+    $('.quantity_checkboxes').click(function () {
+        localStorage.setItem('inputClicked', 'true');
+        wasClicked = true;
+    });
 
+    // If no input was clicked, show all '.quantity_checkboxes'
+    if (!wasClicked) {
+        $('.quantity_checkboxes').show();
+        $(".bottom_wrap").hide();
+        $(".show-more-button").hide();
+    } else {
+        $('.quantity_checkboxes').click();
+    }
 
-            // Restore quantity selection from localStorage
-            function restoreQuantitySelection() {
-                let pillowType = localStorage.getItem("selectedPillowType") || 'Cuscino_Memory';
-                let quantityRadio = pillowType === 'Cuscino_Memory' ? 'quantityMemory' : 'quantityMemoryBio';
-                let selectedQuantity = localStorage.getItem('selectedQuantity');
-                // console.log(selectedQuantity)
-                if (selectedQuantity) {
-                    let selector = `input[name="${quantityRadio}"][data-quantity="${selectedQuantity}"]`;
-                    $(selector).prop('checked', true);
-                } else {
-                    $(`input[name="${quantityRadio}"]:last`).change().prop('checked', false);
-                }
+    // Listen for changes in quantity selection and update order details accordingly
+    $('input[name="quantityMemory"], input[name="quantityMemoryBio"]').change(function () {
+        mrpPerPillow = $(this).val();
+        quantity = $(this).data('quantity');
+        pillowType = $(this).data('pillow');
+        discountPercent = $(this).data('discount');
+        imageSrc = $(this).closest('.quantity_checkboxes').find('img').attr('src') || '';
+        localStorage.setItem('selectedQuantity', quantity);
+        orderDetails(mrpPerPillow, pillowType, quantity, discountPercent, imageSrc);
+        showBottomWrap(this);
 
-                $(`input[name="${quantityRadio}"]:checked`).change();
+        if (wasClicked) {
+            $(this).closest('.quantity_checkboxes').siblings().hide();
+            $(".show-more-button").show();
+            showMoreBtnState = false;
+            localStorage.setItem("showMoreBtnClicked", false);
+        }
+        if (!wasClicked) {
+            $(".show-more-button").click();
+        }
+    });
 
-            }
-
-            // Listen for changes in quantity selection and update order details accordingly
-            $('input[name="quantityMemory"], input[name="quantityMemoryBio"]').change(function () {
-                mrpPerPillow = $(this).val();
-                quantity = $(this).data('quantity');
-                pillowType = $(this).data('pillow');
-                discountPercent = $(this).data('discount');
-                imageSrc = $(this).closest('.quantity_checkboxes').find('img').attr('src') || '';
-                localStorage.setItem('selectedQuantity', quantity);
-                orderDetails(mrpPerPillow, pillowType, quantity, discountPercent, imageSrc);
-                showBottomWrap(this);
-                console.log(typeof (wasClicked))
-                if (wasClicked) {
-                    // console.log("WasClicked: " + wasClicked)
-                    $(this).closest('.quantity_checkboxes').siblings().hide();
-                    $(".show-more-button").show()
-                    localStorage.setItem("showMoreBtnClicked", false)
-                    showMoreBtnState = false;
-                }
-                if (!wasClicked) {
-                    console.log("Show More button clicked")
-                    $(".show-more-button").click()
-                }
-
-                console.log("Qnty Clicked State " + wasClicked)
-
-            });
-
-
-            // Function to update and display order details
-            function orderDetails(mrpPerPillow, pillowType, quantity, discountPercent, imageSrc) {
-                let discount = Math.round((mrpPerPillow * quantity * discountPercent) / 100);
-                let priceAfterDiscount = mrpPerPillow * quantity - discount;
-                $(".selected_pillow_img").html(`<img src="${imageSrc}" alt="Pillow" width="80">`);
-                $('.total_breakdown').html(`
+    // Function to update and display order details
+    function orderDetails(mrpPerPillow, pillowType, quantity, discountPercent, imageSrc) {
+        let discount = Math.round((mrpPerPillow * quantity * discountPercent) / 100);
+        let priceAfterDiscount = mrpPerPillow * quantity - discount;
+        $(".selected_pillow_img").html(`<img src="${imageSrc}" alt="Pillow" width="80">`);
+        $('.total_breakdown').html(`
             <div class="generated-details">
                 <div class="pricing_breakdown">
                     <div class="left-col"> <span class="articleName"><strong>${quantity}</strong> ${pillowType}</span> da ${mrpPerPillow},00 €</div>
@@ -2258,7 +2260,7 @@
                     <div class="left-col">Sconto Meta -${discountPercent}% </div>
                     <div class="right-col fw700"> - ${discount},00 €</div>
                 </div>
-                <div class=" hide" id="dynamicCoupon">
+                <div class="hide" id="dynamicCoupon">
                     <div class="pricing_breakdown hide">
                         <div class="left-col">Coupon (scade in <span id="mins"></span>min <span id="secs"></span>sec) </div>
                         <div class="right-col fw700">-<span id="couponDiscount"> </span>,00 €</div>
@@ -2273,168 +2275,417 @@
                     <div class="right-col" data-total="${priceAfterDiscount}"> <span id="updatedTotal">${priceAfterDiscount}</span>,00 €</div>
                 </div>
             </div>`);
-            }
+    }
 
-            // Function to show the bottom wrap for the selected quantity
-            function showBottomWrap(element) {
-                $('.bottom_wrap').hide();
-                if (wasClicked) {
-                    $(element).closest('.quantity_checkboxes').find('.bottom_wrap').show();
-                }
-            }
+    // Function to show the bottom wrap for the selected quantity
+    function showBottomWrap(element) {
+        $('.bottom_wrap').hide();
+        if (wasClicked) {
+            $(element).closest('.quantity_checkboxes').find('.bottom_wrap').show();
+        }
+    }
 
-            // Restore the initial state when the page loads
-            function restoreInitialState() {
-                let savedPillowType = localStorage.getItem('selectedPillowType');
-                if (savedPillowType) {
-                    $('input[name="pillowType"][value="' + savedPillowType + '"]').prop('checked', true);
-                    updateRadioVisibility();
-                } else {
-                    $('input[name="pillowType"]:first').prop('checked', true).change();
-                }
-
-                console.log("Restoring Show More state: " + showMoreBtnState);
-                if (showMoreBtnState) {
-                    $(".quantity_checkboxes").show();
-                    $(".bottom_wrap").hide();
-                    $(".show-more-button").hide();
-                } else {
-                    restoreQuantitySelection();
-                }
-            }
-
-            // Attach event handlers
-            $('input[name="pillowType"]').change(updateRadioVisibility);
-            restoreInitialState();
-            console.log("Last instance of showMoreState " + localStorage.getItem("showMoreBtnClicked"))
-
-
-        // Function to start or resume the timer
-        function startOrResumeTimer(duration, startTime) {
-            let timer = duration;
-            let intervalId = setInterval(function () {
-                let now = Date.now();
-                let elapsedTime = Math.floor((now - startTime) / 1000);
-                timer = duration - elapsedTime;
-                let minutesConta = document.getElementById("minutes");
-                let secondsConta = document.getElementById("seconds");
-                let minsForCoupon = document.getElementById("mins");
-                let secsForCoupon = document.getElementById("secs");
-                let couponDiscount = document.getElementById("couponDiscount");
-                let amountBeforeCoupon = $(".totalAmt .right-col").data("total");
-                if (timer <= 0) {
-                    clearInterval(intervalId); // Clear interval when timer reaches 0
-                    // display.textContent = "00:00";
-                    minutesConta.textContent = 0;
-                    secondsConta.textContent = 0;
-                    minsForCoupon.textContent = 0;
-                    secsForCoupon.textContent = 0;
-                    couponDiscount.textContent = 0;
-                    $(".extra-coupon-conta").hide();
-                    $("#dynamicCoupon").hide();
-                    $("#updatedTotal").text(amountBeforeCoupon);
-                    // localStorage.removeItem("startTime");
-                    // localStorage.removeItem("userIP");
-                    return;
-                } else {
-                    $(".extra-coupon-conta").show();
-
-                    $("#updatedTotal").text(amountBeforeCoupon - 10);
-                    $("#dynamicCoupon").show();
-
-                    minutes = Math.floor(timer / 60);
-                    seconds = timer % 60;
-
-                    let minutesStr = minutes < 10 ? "0" + minutes : minutes;
-                    let secondsStr = seconds < 10 ? "0" + seconds : seconds;
-
-                    minutesConta.textContent = minutesStr;
-                    secondsConta.textContent = secondsStr;
-                    minsForCoupon.textContent = minutesStr;
-                    secsForCoupon.textContent = secondsStr;
-                    couponDiscount.textContent = 10;
-                }
-
-
-            }, 1000);
-
-            return intervalId; // Return interval ID
+    // Restore the initial state when the page loads
+    function restoreInitialState() {
+        let savedPillowType = localStorage.getItem('selectedPillowType');
+        if (savedPillowType) {
+            $('input[name="pillowType"][value="' + savedPillowType + '"]').prop('checked', true);
+            updateRadioVisibility();
+        } else {
+            $('input[name="pillowType"]:first').prop('checked', true).change();
         }
 
-        // Function to check if timer has already started for this user
-        function hasTimerStarted() {
-            let userIP = localStorage.getItem("userIP");
-            return userIP !== null;
+        if (showMoreBtnState) {
+            $(".quantity_checkboxes").show();
+            $(".bottom_wrap").hide();
+            $(".show-more-button").hide();
+        } else {
+            restoreQuantitySelection();
         }
+    }
 
-        // Function to set the user IP and start time in localStorage
-        function setUserIPAndStartTime() {
-            let userIP = localStorage.setItem("userIP", "timerStarted");
-            let startTime = Date.now();
-            localStorage.setItem("startTime", startTime);
-        }
+    // Attach event handlers
+    $('input[name="pillowType"]').change(updateRadioVisibility);
+    restoreInitialState();
 
-        // Add event listener to radio buttons
-        let currentIntervalId; // Variable to hold the current interval ID
-        radioButtons.forEach(function (radioButton) {
-            radioButton.addEventListener('click', function () {
-                $(this).find(".bottom_wrap").show();
-                if (!hasTimerStarted()) {
-                    setUserIPAndStartTime();
-                    let minutes = 15 * 60; // 15 minutes 
-                    if (currentIntervalId) {
-                        clearInterval(currentIntervalId); // Clear previous interval if exists
-                    }
-                    currentIntervalId = startOrResumeTimer(minutes, Date
-                        .now()); // Start new timer and store interval ID
-                } else {
-                    if (localStorage.getItem("startTime") !== null) {
-                        let storedStartTime = parseInt(localStorage.getItem("startTime"));
-                        if (!isNaN(storedStartTime)) {
-                            let currentTime = Date.now();
-                            let elapsed = Math.floor((currentTime - storedStartTime) / 1000);
-                            let remainingSeconds = 15 * 60 - elapsed;
+    // Function to start or resume the timer
+    function startOrResumeTimer(duration, startTime) {
+        let timer = duration;
+        let intervalId = setInterval(function () {
+            let now = Date.now();
+            let elapsedTime = Math.floor((now - startTime) / 1000);
+            timer = duration - elapsedTime;
 
-                            if (remainingSeconds <= 0) {
-                                // Timer expired, do not start a new one
-                                console.log("Timer already expired for this user.");
-                                $("#dynamicCoupon").hide();
-                            } else {
-                                // Resume the timer
-                                if (currentIntervalId) {
-                                    clearInterval(
-                                    currentIntervalId); // Clear previous interval if exists
-                                }
-                                currentIntervalId = startOrResumeTimer(remainingSeconds,
-                                    storedStartTime);
-                            }
+            let minutesConta = document.getElementById("minutes");
+            let secondsConta = document.getElementById("seconds");
+            let minsForCoupon = document.getElementById("mins");
+            let secsForCoupon = document.getElementById("secs");
+            let couponDiscount = document.getElementById("couponDiscount");
+            let amountBeforeCoupon = $(".totalAmt .right-col").data("total");
+            if (timer <= 0) {
+                clearInterval(intervalId);
+                minutesConta.textContent = 0;
+                secondsConta.textContent = 0;
+                minsForCoupon.textContent = 0;
+                secsForCoupon.textContent = 0;
+                couponDiscount.textContent = 0;
+                $(".extra-coupon-conta").hide();
+                $("#dynamicCoupon").hide();
+                $("#updatedTotal").text(amountBeforeCoupon);
+                return;
+            } else {
+                $(".extra-coupon-conta").show();
+                $("#updatedTotal").text(amountBeforeCoupon - 10);
+                $("#dynamicCoupon").show();
+
+                let minutes = Math.floor(timer / 60);
+                let seconds = timer % 60;
+
+                let minutesStr = minutes < 10 ? "0" + minutes : minutes;
+                let secondsStr = seconds < 10 ? "0" + seconds : seconds;
+
+                minutesConta.textContent = minutesStr;
+                secondsConta.textContent = secondsStr;
+                minsForCoupon.textContent = minutesStr;
+                secsForCoupon.textContent = secondsStr;
+                couponDiscount.textContent = 10;
+            }
+        }, 1000);
+
+        return intervalId;
+    }
+
+    // Function to check if timer has already started for this user
+    function hasTimerStarted() {
+        let userIP = localStorage.getItem("userIP");
+        return userIP !== null;
+    }
+
+    // Function to set the user IP and start time in localStorage
+    function setUserIPAndStartTime() {
+        localStorage.setItem("userIP", "timerStarted");
+        let startTime = Date.now();
+        localStorage.setItem("startTime", startTime);
+    }
+
+    // Add event listener to radio buttons
+    let currentIntervalId;
+    radioButtons.forEach(function (radioButton) {
+        radioButton.addEventListener('click', function () {
+            $(this).find(".bottom_wrap").show();
+            if (!hasTimerStarted()) {
+                setUserIPAndStartTime();
+                let minutes = 15 * 60;
+                if (currentIntervalId) {
+                    clearInterval(currentIntervalId);
+                }
+                currentIntervalId = startOrResumeTimer(minutes, Date.now());
+            } else {
+                if (localStorage.getItem("startTime") !== null) {
+                    let storedStartTime = parseInt(localStorage.getItem("startTime"));
+                    if (!isNaN(storedStartTime)) {
+                        let currentTime = Date.now();
+                        let elapsed = Math.floor((currentTime - storedStartTime) / 1000);
+                        let remainingSeconds = 15 * 60 - elapsed;
+
+                        if (remainingSeconds <= 0) {
+                            $("#dynamicCoupon").hide();
                         } else {
-                            console.error("Invalid stored start time:", storedStartTime);
+                            if (currentIntervalId) {
+                                clearInterval(currentIntervalId);
+                            }
+                            currentIntervalId = startOrResumeTimer(remainingSeconds, storedStartTime);
                         }
+                    } else {
+                        console.error("Invalid stored start time:", storedStartTime);
                     }
                 }
-            });
+            }
         });
+    });
 
-        // If no input was clicked, show all '.quantity_checkboxes'
-         if (!wasClicked) {
-        $('.quantity_checkboxes').show();
-        $(".bottom_wrap").hide()
-        $(".show-more-button").hide() 
-        console.log(wasClicked)
-        } else{
-            $('.quantity_checkboxes').click()
+    // Restore timer state on page reload
+    if (localStorage.getItem("startTime") !== null) {
+        let storedStartTime = parseInt(localStorage.getItem("startTime"));
+        if (!isNaN(storedStartTime)) {
+            let currentTime = Date.now();
+            let elapsed = Math.floor((currentTime - storedStartTime) / 1000);
+            let remainingSeconds = 15 * 60 - elapsed;
+
+            if (remainingSeconds > 0) {
+                currentIntervalId = startOrResumeTimer(remainingSeconds, storedStartTime);
+            }
         }
+    }
+});
 
-        // Attach a click event listener to input elements inside '.quantity_checkboxes'
-        $('.quantity_checkboxes').click(function() {
+
+$(document).ready(function () {
+    let mrpPerPillow, quantity, pillowType, discountPercent, imageSrc;
+    let wasClicked = localStorage.getItem('inputClicked') === 'true';
+    let showMoreBtnState = localStorage.getItem("showMoreBtnClicked") === 'true';
+
+    // Show more button
+    $(".show-more-button").click(function (e) {
+        e.preventDefault();
+        $(".quantity_checkboxes").show();
+        $(".bottom_wrap").hide();
+        $(this).hide();
+        showMoreBtnState = true;
+        localStorage.setItem("showMoreBtnClicked", true);
+        wasClicked = false;
+        localStorage.setItem('inputClicked', false);
+    });
+
+    // Function to update visibility and restore quantity based on the selected pillowType
+    function updateRadioVisibility() {
+        let selectedPillowType = $('input[name="pillowType"]:checked').val();
+        $('.cuscinoMemory_quantity, .cuscinoMemoryBio_quantity').hide();
+
+        if (selectedPillowType === 'Cuscino_Memory') {
+            $('.cuscinoMemory_quantity').show();
+        } else if (selectedPillowType === 'Cuscino_Memory_Bio') {
+            $('.cuscinoMemoryBio_quantity').show();
+        }
+        localStorage.setItem("selectedPillowType", selectedPillowType);
+        restoreQuantitySelection();
+    }
+
+    // Restore quantity selection from localStorage
+    function restoreQuantitySelection() {
+        let pillowType = localStorage.getItem("selectedPillowType") || 'Cuscino_Memory';
+        let quantityRadio = pillowType === 'Cuscino_Memory' ? 'quantityMemory' : 'quantityMemoryBio';
+        let selectedQuantity = localStorage.getItem('selectedQuantity');
+        if (selectedQuantity) {
+            let selector = `input[name="${quantityRadio}"][data-quantity="${selectedQuantity}"]`;
+            $(selector).prop('checked', true);
+        } else {
+            $(`input[name="${quantityRadio}"]:last`).change().prop('checked', false);
+        }
+        $(`input[name="${quantityRadio}"]:checked`).change();
+    }
+
+    // Attach a click event listener to input elements inside '.quantity_checkboxes'
+    $('.quantity_checkboxes').click(function () {
         localStorage.setItem('inputClicked', 'true');
         wasClicked = true;
-        console.log("Qnty Checkbox Clicked");
-        console.log(wasClicked)
-        }); 
-
     });
+
+    // If no input was clicked, show all '.quantity_checkboxes'
+    if (!wasClicked) {
+        $('.quantity_checkboxes').show();
+        $(".bottom_wrap").hide();
+        $(".show-more-button").hide();
+    } else {
+        $('.quantity_checkboxes').click();
+    }
+
+    // Listen for changes in quantity selection and update order details accordingly
+    $('input[name="quantityMemory"], input[name="quantityMemoryBio"]').change(function () {
+        mrpPerPillow = $(this).val();
+        quantity = $(this).data('quantity');
+        pillowType = $(this).data('pillow');
+        discountPercent = $(this).data('discount');
+        imageSrc = $(this).closest('.quantity_checkboxes').find('img').attr('src') || '';
+        localStorage.setItem('selectedQuantity', quantity);
+        orderDetails(mrpPerPillow, pillowType, quantity, discountPercent, imageSrc);
+        showBottomWrap(this);
+
+        if (wasClicked) {
+            $(this).closest('.quantity_checkboxes').siblings().hide();
+            $(".show-more-button").show();
+            showMoreBtnState = false;
+            localStorage.setItem("showMoreBtnClicked", false);
+        }
+        if (!wasClicked) {
+            $(".show-more-button").click();
+        }
+    });
+
+    // Function to update and display order details
+    function orderDetails(mrpPerPillow, pillowType, quantity, discountPercent, imageSrc) {
+        let discount = Math.round((mrpPerPillow * quantity * discountPercent) / 100);
+        let priceAfterDiscount = mrpPerPillow * quantity - discount;
+        $(".selected_pillow_img").html(`<img src="${imageSrc}" alt="Pillow" width="80">`);
+        $('.total_breakdown').html(`
+            <div class="generated-details">
+                <div class="pricing_breakdown">
+                    <div class="left-col"> <span class="articleName"><strong>${quantity}</strong> ${pillowType}</span> da ${mrpPerPillow},00 €</div>
+                    <div class="right-col fw700"> ${mrpPerPillow * quantity},00 €</div>
+                </div>
+                <div class="pricing_breakdown">
+                    <div class="left-col">Sconto Meta -${discountPercent}% </div>
+                    <div class="right-col fw700"> - ${discount},00 €</div>
+                </div>
+                <div class="hide" id="dynamicCoupon">
+                    <div class="pricing_breakdown hide">
+                        <div class="left-col">Coupon (scade in <span id="mins"></span>min <span id="secs"></span>sec) </div>
+                        <div class="right-col fw700">-<span id="couponDiscount"> </span>,00 €</div>
+                    </div>
+                </div>
+                <div class="pricing_breakdown">
+                    <div class="left-col">Spedizione e contrassegno </div>
+                    <div class="right-col fw700"> 0,00 €</div>
+                </div>
+                <div class="pricing_breakdown totalAmt">
+                    <div class="left-col "> Totale: </div>
+                    <div class="right-col" data-total="${priceAfterDiscount}"> <span id="updatedTotal">${priceAfterDiscount}</span>,00 €</div>
+                </div>
+            </div>`);
+    }
+
+    // Function to show the bottom wrap for the selected quantity
+    function showBottomWrap(element) {
+        $('.bottom_wrap').hide();
+        if (wasClicked) {
+            $(element).closest('.quantity_checkboxes').find('.bottom_wrap').show();
+        }
+    }
+
+    // Restore the initial state when the page loads
+    function restoreInitialState() {
+        let savedPillowType = localStorage.getItem('selectedPillowType');
+        if (savedPillowType) {
+            $('input[name="pillowType"][value="' + savedPillowType + '"]').prop('checked', true);
+            updateRadioVisibility();
+        } else {
+            $('input[name="pillowType"]:first').prop('checked', true).change();
+        }
+
+        if (showMoreBtnState) {
+            $(".quantity_checkboxes").show();
+            $(".bottom_wrap").hide();
+            $(".show-more-button").hide();
+        } else {
+            restoreQuantitySelection();
+        }
+    }
+
+    // Attach event handlers
+    $('input[name="pillowType"]').change(updateRadioVisibility);
+    restoreInitialState();
+
+    // Function to start or resume the timer
+    function startOrResumeTimer(duration, startTime) {
+        let timer = duration;
+        let intervalId = setInterval(function () {
+            let now = Date.now();
+            let elapsedTime = Math.floor((now - startTime) / 1000);
+            timer = duration - elapsedTime;
+
+            let minutesConta = document.getElementById("minutes");
+            let secondsConta = document.getElementById("seconds");
+            let minsForCoupon = document.getElementById("mins");
+            let secsForCoupon = document.getElementById("secs");
+            let couponDiscount = document.getElementById("couponDiscount");
+            let amountBeforeCoupon = $(".totalAmt .right-col").data("total");
+            if (timer <= 0) {
+                clearInterval(intervalId);
+                minutesConta.textContent = 0;
+                secondsConta.textContent = 0;
+                minsForCoupon.textContent = 0;
+                secsForCoupon.textContent = 0;
+                couponDiscount.textContent = 0;
+                $(".extra-coupon-conta").hide();
+                $("#dynamicCoupon").hide();
+                $("#updatedTotal").text(amountBeforeCoupon);
+                return;
+            } else {
+                $(".extra-coupon-conta").show();
+                $("#updatedTotal").text(amountBeforeCoupon - 10);
+                $("#dynamicCoupon").show();
+
+                let minutes = Math.floor(timer / 60);
+                let seconds = timer % 60;
+
+                let minutesStr = minutes < 10 ? "0" + minutes : minutes;
+                let secondsStr = seconds < 10 ? "0" + seconds : seconds;
+
+                minutesConta.textContent = minutesStr;
+                secondsConta.textContent = secondsStr;
+                minsForCoupon.textContent = minutesStr;
+                secsForCoupon.textContent = secondsStr;
+                couponDiscount.textContent = 10;
+            }
+        }, 1000);
+
+        return intervalId;
+    }
+
+    // Function to check if timer has already started for this user
+    function hasTimerStarted() {
+        let userIP = localStorage.getItem("userIP");
+        return userIP !== null;
+    }
+
+    // Function to set the user IP and start time in localStorage
+    function setUserIPAndStartTime() {
+        localStorage.setItem("userIP", "timerStarted");
+        let startTime = Date.now();
+        localStorage.setItem("startTime", startTime);
+    }
+
+    // Add event listener to radio buttons
+    let currentIntervalId;
+    $('.quantity_checkboxes input[type="radio"]').click(function () {
+        if ($(this).prop('checked')) {
+            $(this).closest('.quantity_checkboxes').siblings().hide();
+            $(".show-more-button").show();
+            $(this).find(".bottom_wrap").show()
+            showMoreBtnState = false;
+            localStorage.setItem("showMoreBtnClicked", false);
+        }
+    });
+
+    $('.quantity_checkboxes').each(function () {
+        $(this).on('click', function () {
+            $(this).find(".bottom_wrap").show();
+            if (!hasTimerStarted()) {
+                setUserIPAndStartTime();
+                let minutes = 15 * 60;
+                if (currentIntervalId) {
+                    clearInterval(currentIntervalId);
+                }
+                currentIntervalId = startOrResumeTimer(minutes, Date.now());
+            } else {
+                if (localStorage.getItem("startTime") !== null) {
+                    let storedStartTime = parseInt(localStorage.getItem("startTime"));
+                    if (!isNaN(storedStartTime)) {
+                        let currentTime = Date.now();
+                        let elapsed = Math.floor((currentTime - storedStartTime) / 1000);
+                        let remainingSeconds = 15 * 60 - elapsed;
+
+                        if (remainingSeconds <= 0) {
+                            $("#dynamicCoupon").hide();
+                        } else {
+                            if (currentIntervalId) {
+                                clearInterval(currentIntervalId);
+                            }
+                            currentIntervalId = startOrResumeTimer(remainingSeconds, storedStartTime);
+                        }
+                    } else {
+                        console.error("Invalid stored start time:", storedStartTime);
+                    }
+                }
+            }
+        });
+    });
+
+    // Restore timer state on page reload
+    if (localStorage.getItem("startTime") !== null) {
+        let storedStartTime = parseInt(localStorage.getItem("startTime"));
+        if (!isNaN(storedStartTime)) {
+            let currentTime = Date.now();
+            let elapsed = Math.floor((currentTime - storedStartTime) / 1000);
+            let remainingSeconds = 15 * 60 - elapsed;
+
+            if (remainingSeconds > 0) {
+                currentIntervalId = startOrResumeTimer(remainingSeconds, storedStartTime);
+            }
+        }
+    }
+});
+
 
     </script>
 
